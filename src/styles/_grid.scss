@@ -1,0 +1,138 @@
+$large: 1200px;
+@mixin xtrasmall {
+  .xs-1 {
+    grid-column: span 1;
+    // width: percentage(1/12);
+  }
+  .xs-2 {
+    grid-column: span 2;
+    // width: percentage(2/12);
+  }
+  .xs-3 {
+    grid-column: span 3;
+    // width: percentage(3/12);
+  }
+  .xs-4 {
+    grid-column: span 4;
+    // width: percentage(4/12);
+  }
+  .xs-5 {
+    grid-column: span 5;
+    // width: percentage(5/12);
+  }
+  .xs-6 {
+    grid-column: span 6;
+    // width: percentage(6/12);
+  }
+  .xs-7 {
+    grid-column: span 7;
+    // width: percentage(7/12);
+  }
+  .xs-8 {
+    grid-column: span 8;
+    // width: percentage(8/12);
+  }
+  .xs-9 {
+    grid-column: span 9;
+    // width: percentage(9/12);
+  }
+  .xs-10 {
+    grid-column: span 10;
+    // width: percentage(10/12);
+  }
+  .xs-11 {
+    grid-column: span 11;
+    // width: percentage(11/12);
+  }
+  .xs-12 {
+    grid-column: span 12;
+    // width: percentage(12/12);
+  }
+}
+@mixin large {
+  .lg-1 {
+    grid-column: span 1;
+    // width: percentage(1/12);
+  }
+  .lg-2 {
+    grid-column: span 2;
+    // width: percentage(2/12);
+  }
+  .lg-3 {
+    grid-column: span 3;
+    // width: percentage(3/12);
+  }
+  .lg-4 {
+    grid-column: span 4;
+    // width: percentage(4/12);
+  }
+  .lg-5 {
+    grid-column: span 5;
+    // width: percentage(5/12);
+  }
+  .lg-6 {
+    grid-column: span 6;
+    // width: percentage(6/12);
+  }
+  .lg-7 {
+    grid-column: span 7;
+    // width: percentage(7/12);
+  }
+  .lg-8 {
+    grid-column: span 8;
+    // width: percentage(8/12);
+  }
+  .lg-9 {
+    grid-column: span 9;
+    // width: percentage(9/12);
+  }
+  .lg-10 {
+    grid-column: span 10;
+    // width: percentage(10/12);
+  }
+  .lg-11 {
+    grid-column: span 11;
+    // width: percentage(11/12);
+  }
+  .lg-12 {
+    grid-column: span 12;
+    width: percentage(12/12);
+  }
+}
+@mixin spacing {
+  .spacing-1 {
+    gap: 10px;
+  }
+  .spacing-2 {
+    gap: 20px;
+  }
+  .spacing-3 {
+    gap: 30px;
+  }
+  .spacing-4 {
+    gap: 40px;
+  }
+}
+
+.grid_container {
+  padding: 2rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  // justify-content: center;
+}
+.grid_item {
+  justify-content: center;
+  text-align: center;
+}
+.featured {
+  grid-column: span 6fr;
+  grid-row: span 2;
+}
+@media screen and (min-width: 0px) {
+  @include xtrasmall;
+}
+@media screen and (min-width: $mobile) {
+  @include large;
+}
+@include spacing;

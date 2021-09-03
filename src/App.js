@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Navigation from './components/Navigation'
 import Container from './components/Container'
 import ProductPage from './screens/ProductPage'
+// import { Container } from '@material-ui/core';
 function App() {
   return (
     <>
@@ -14,7 +15,7 @@ function App() {
       <Navigation/>
       <Container>
         <Route path='/' exact component={Home}/>
-        <Route path='/store' component={Store}/>
+        <Route path='/store' exact component={Store}/>
         <Route path='/cart' component={Cart}/>
         <Route path='/store/:id' component={ProductPage}/>
         <Footer/>

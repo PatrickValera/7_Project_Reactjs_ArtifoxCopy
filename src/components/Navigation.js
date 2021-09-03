@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-
+import { useSelector } from "react-redux"
 
 const Navigation = () => {
-
+    const cartCount=useSelector(state=>state.cartItems.length)
     const pages=[{
         title:"HOME",
         link:'/'
@@ -23,6 +23,7 @@ const Navigation = () => {
                     <li className="nav-list-item-box">
                         <Link className="nav-list-item" to={page.link}>
                             <span className="nav-list-item-text">{page.title}</span>
+                            {page.title==="CART"?<span className="cart-count">{cartCount}</span>:""}
                         </Link>
                     </li>
                 ))}

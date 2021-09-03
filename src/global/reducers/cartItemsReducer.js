@@ -1,7 +1,7 @@
-const cartItemsReducer = (state=["cartitem1","cartitem1"],action) =>{
+const cartItemsReducer = (state=[{name:"cart item",price:999}],action) =>{
     switch(action.type){
         case "ADD_TO_CART":{
-            return state
+            return [...state,action.payload]
         }
         case "REMOVE_FROM_CART":{
             return state

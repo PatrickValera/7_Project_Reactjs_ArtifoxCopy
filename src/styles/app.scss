@@ -1,19 +1,17 @@
 @import "variables";
-@import "navigation","footer";
+@import "navigation", "footer", "grid", "card";
 
-
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style:none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
-.main-container{
-    margin-left: $navigation-width;
-    @media screen and (max-width:500px){
-        margin-left: 0;
-    }
+.main-container {
+  margin-left: $navigation-width;
+  @media screen and (max-width: $mobile) {
+    margin-left: 0;
+  }
 }

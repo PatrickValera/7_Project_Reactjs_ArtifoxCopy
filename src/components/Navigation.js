@@ -19,9 +19,9 @@ const Navigation = () => {
                 <Link to='/'><h2 style={{paddingLeft:'30px'}}>ARTYFACTS</h2></Link>
             </div>
             <ul className="nav-list">
-                {pages.map((page)=>(
-                    <li className="nav-list-item-box">
-                        <Link className="nav-list-item" to={page.link}>
+                {pages.map((page,index)=>(
+                    <li className="nav-list-item-box" key={index}>
+                        <Link className="nav-list-item" to={page.link} >
                             <span className="nav-list-item-text">{page.title}</span>
                             {page.title==="CART"?<span className="cart-count">{cartCount}</span>:""}
                         </Link>

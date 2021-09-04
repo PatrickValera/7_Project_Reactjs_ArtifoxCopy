@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { capitalizeFirstLetter } from '../utils'
+// import { capitalizeFirstLetter } from '../utils'
 import Grid from '../components/Grid'
 import Card from '../components/Card'
 const Store = () => {
@@ -11,7 +11,7 @@ const Store = () => {
         <div className="main-store">
             <Grid container xs={12} spacing={4}>
                 {storeItems.map(item=>(
-                    <Grid item lg={4} xs={6} className="store-item">
+                    <Grid item key={item.id} lg={4} xs={6} className="store-item">
                         <Card item={item}/>
                     </Grid>))}
             </Grid>

@@ -14,6 +14,14 @@ export const removeFromCart = (item) =>{
         })
     }
 }
+export const editQty = (item) =>{
+    return(dispatch)=>{
+        dispatch({
+            type:"EDIT_QTY",
+            payload:item
+        })
+    }
+}
 export const addToStore = (item) =>{
     return (dispatch)=>{
         dispatch({

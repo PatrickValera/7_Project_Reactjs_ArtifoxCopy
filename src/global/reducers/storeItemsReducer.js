@@ -1,31 +1,59 @@
 const storeItems=[{
     id:1,
     name:"tables",
-    price:100
+    price:100,
+    images:{
+        main:'/table',
+        sub:'/tablesub'
+    }
 },{
     id:2,
-    name:"drawer",
-    price:100
+    name:"stand",
+    price:100,
+    images:{
+        main:'/stand',
+        sub:'/standsub'
+    }
 },{
     id:3,
-    name:"desk",
-    price:99
+    name:"small stand",
+    price:99,
+    images:{
+        main:'/smallstand',
+        sub:'/smallstandsub'
+    }
 },{
     id:4,
-    name:"shelf",
-    price:50
+    name:"mini shelf",
+    price:50,
+    images:{
+        main:'/minishelf',
+        sub:'/minishelfsub'
+    }
 },{
     id:5,
-    name:"chair",
-    price:150
+    name:"hook",
+    price:50,
+    images:{
+        main:'/hook',
+        sub:'/hooksub'
+    }
 },{
     id:6,
     name:"notebook",
-    price:20
+    price:20,
+    images:{
+        main:'/table',
+        sub:'/tablesub'
+    }
 },{
     id:7,
     name:"pencil cup",
-    price:40
+    price:40,
+    images:{
+        main:'/table',
+        sub:'/tablesub'
+    }
 }]
 
 const storeItemsReducer = (state=storeItems,action) =>{

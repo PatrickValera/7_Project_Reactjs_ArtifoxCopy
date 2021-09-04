@@ -1,13 +1,31 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect,useState } from 'react'
+import { useSelector,useDispatch } from 'react-redux'
+import CartItem from '../components/CartItem'
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../global/actioncreators/index'
 
 const Cart = () => {
+    const [total,setTotal]=useState(0)
+    const dispatch=useDispatch()
     const {cartItems}=useSelector(state=>state)
-    console.log(cartItems)
+    const {editQty}=bindActionCreators(actionCreators,dispatch);
+    
+    useEffect(() => {
+        console.log(cartItems);
+        console.log(`changing total`);
+        setTotal(0)
+        cartItems.forEach(item=>{
+            setTotal(state=>(state+(item.price*item.qty)))
+        })
+    }, [cartItems])
     return (
-        <div>
-            {cartItems.map(item=>(<h2>{item.name}</h2>))}
+        <div className="cart-item-container">
+           { cartItems.map((item)=>(<CartItem item={item} key={item.id} edit={editQty}/>))}
+           <button>CHEKCK OUT</button>
+           <span>{total}</span>
         </div>
+
     )
 }
 

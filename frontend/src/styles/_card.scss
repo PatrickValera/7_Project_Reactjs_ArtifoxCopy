@@ -1,19 +1,62 @@
 .card {
-  //   background-color: red;
-  //   display: flex;
-  .card-image {
-    padding-top: 100%;
-    border: gray solid 1px;
-    // background-color: gray;
+  color: #000;
+  transition: 0.25s linear;
+  z-index: 10;
+  &:hover {
+    .name::before {
+      width: 100% !important;
+    }
+    .image-figure {
+      .image {
+        transform: scale(1.1) !important;
+        opacity: 0 !important;
+      }
+    }
+  }
+
+  .card-image-container {
+    .image-figure {
+      padding-top: 100%;
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+      .image {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(1);
+        opacity: 1;
+        transition: transform 0.3s linear,
+          opacity 0.2s cubic-bezier(0.38, 0.13, 0.75, 0.59);
+      }
+      .sub {
+        opacity: 1 !important;
+      }
+    }
   }
   .card-detail {
     text-align: left;
     padding: 0.5rem 0 0 0.5rem;
     .name {
-      //   background-color: gray;
+      display: inline;
+      position: relative;
       width: 100%;
-      font-size: 1.5em;
+      font-size: 1.2em;
+      font-weight: 500;
       letter-spacing: 0.05em;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0.5px;
+        background-color: #000;
+        bottom: 4px;
+        transition: 0.25s linear;
+      }
+    }
+    .price {
+      display: block;
     }
   }
 }

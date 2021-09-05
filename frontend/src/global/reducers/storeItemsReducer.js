@@ -3,56 +3,56 @@ const storeItems=[{
     name:"tables",
     price:100,
     images:{
-        main:'/table',
-        sub:'/tablesub'
+        main:'/images/table.jpeg',
+        sub:'/images/tablesub.jpeg'
     }
 },{
     id:2,
     name:"stand",
     price:100,
     images:{
-        main:'/stand',
-        sub:'/standsub'
+        main:'/images/stand.jpeg',
+        sub:'/images/standsub.jpeg'
     }
 },{
     id:3,
     name:"small stand",
     price:99,
     images:{
-        main:'/smallstand',
-        sub:'/smallstandsub'
+        main:'/images/smallstand.jpeg',
+        sub:'/images/smallstandsub.jpeg'
     }
 },{
     id:4,
     name:"mini shelf",
     price:50,
     images:{
-        main:'/minishelf',
-        sub:'/minishelfsub'
+        main:'/images/minishelf.jpeg',
+        sub:'/images/minishelfsub.jpeg'
     }
 },{
     id:5,
     name:"hook",
     price:50,
     images:{
-        main:'/hook',
-        sub:'/hooksub'
+        main:'/images/hook.jpeg',
+        sub:'/images/hooksub.jpeg'
     }
 },{
     id:6,
     name:"notebook",
     price:20,
     images:{
-        main:'/table',
-        sub:'/tablesub'
+        main:'/images/table'.jpeg,
+        sub:'/images/tablesub.jpeg'
     }
 },{
     id:7,
     name:"pencil cup",
     price:40,
     images:{
-        main:'/table',
-        sub:'/tablesub'
+        main:'/images/table.jpeg',
+        sub:'/images/tablesub.jpeg'
     }
 }]
 

@@ -21,7 +21,7 @@
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/dbseeder",
-    "push":"git add . && git commit -m '$m' && git push"
+    "push":"git add . && git commit -m '$M' && git push"
   },
   "repository": {
     "type": "git",

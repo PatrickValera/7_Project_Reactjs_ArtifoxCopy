@@ -1,4 +1,9 @@
 import express from 'express'
+import connectDB from './config/dbconfig.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
+connectDB()
 const app=express();
 
 app.get('/api',(req,res)=>{
@@ -6,4 +11,4 @@ app.get('/api',(req,res)=>{
 })
 
 
-app.listen(5000,console.log('SERVER IS RUNNING'))
+app.listen(5001,console.log(`SERVER IS RUNNING ON PORT 5000`.green.underline))

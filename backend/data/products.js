@@ -1,4 +1,4 @@
-const storeItems=[{
+const products=[{
     id:1,
     name:"tables",
     price:100,
@@ -51,21 +51,9 @@ const storeItems=[{
     name:"pencil cup",
     price:40,
     images:{
-        main:'/images/table.jpeg',
-        sub:'/images/tablesub.jpeg'
+        main:'/images/pencilcup.jpeg',
+        sub:'/images/pencilcupsub.jpeg'
     }
 }]
 
-const storeItemsReducer = (state=storeItems,action) =>{
-    switch(action.type){
-        case "ADD_TO_STORE":{
-            return state
-        }
-        case "REMOVE_FROM_STORE":{
-            return state
-        }
-        default:
-            return state
-    }
-}
-export default storeItemsReducer
+export default products

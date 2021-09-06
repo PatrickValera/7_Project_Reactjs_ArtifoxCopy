@@ -12,6 +12,9 @@
   .nav-header {
     padding: 30px 0 50px;
     // background-color: gray;
+    h2{
+      color:#000;
+    }
   }
   .nav-list {
     padding: 0 1rem;
@@ -20,7 +23,11 @@
     border-radius: 0.5rem;
     background-color: transparent;
     &:hover {
-      background-color: darken($main, 20%);
+      // background-color: darken($main, 20%);
+      .nav-list-item-text::after{
+      width: 100%;
+
+      }
     }
   }
   .nav-list-item {
@@ -33,9 +40,6 @@
   .nav-list-item-text {
     position: relative;
     color: $font-main;
-    &:hover:after {
-      width: 100%;
-    }
     &:after {
       content: "";
       position: absolute;

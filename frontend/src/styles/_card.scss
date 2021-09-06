@@ -51,12 +51,13 @@
         width: 0;
         height: 0.5px;
         background-color: #000;
-        bottom: 4px;
+        bottom: 3px;
         transition: 0.25s linear;
       }
     }
     .price {
       display: block;
+      font-size: .7em;
     }
   }
 }

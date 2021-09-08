@@ -19,7 +19,7 @@ const CartItem = ({item,edit}) => {
             <div className="thumbnail">
                 <figure className="thumbnail-container">
                     {console.log(item.images)}
-                    <img className="product-thumbnail" src={`/images${item.images.main}.jpeg`} alt="" />
+                    <img className="product-thumbnail" src={item.images.main} alt="" />
                 </figure>
             </div>
             <div className="detail">

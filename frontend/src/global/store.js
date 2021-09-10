@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 
 const reducers=combineReducers({
     cartItems:cartItemsReducer,
-    storeItems:storeItemsReducer
+    xxx:storeItemsReducer
 })
 
 const store = createStore(reducers,{},applyMiddleware(thunk))

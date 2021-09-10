@@ -6,11 +6,12 @@ import Carousel from '../components/Carousel'
 
 const ProductPage = ({match}) => {
     const dispatch = useDispatch();
-    const item = useSelector(state=>state.storeItems.find(item=>item.id===Number(match.params.id)))
+    // const item = useSelector(state=>state.xxx.storeItems.find(item=>item._id===Number(match.params.id)))
+    const item = useSelector(state=>state.xxx.storeItems.find(item=>item._id===(match.params.id)))
     const {addToCart} = bindActionCreators(actionCreators,dispatch)
 
     const handleClick=()=>{
-        addToCart(item)
+        // addToCart(item)
     }
     return (
     <div className="product-page">

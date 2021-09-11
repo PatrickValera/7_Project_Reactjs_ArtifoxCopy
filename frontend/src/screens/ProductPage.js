@@ -1,23 +1,24 @@
-import React,{useState,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import {bindActionCreators} from "redux"
-import { actionCreators } from '../global/actioncreators/index'
+// import {bindActionCreators} from "redux"
+// import { actionCreators } from '../global/actioncreators/index'
 import Carousel from '../components/Carousel'
 import {Grid} from '@material-ui/core'
+// import { addToCart } from '../global/actioncreators/cartItemsActions'
+import { getItem } from '../global/actioncreators/storeItemActions'
 
 const ProductPage = ({match}) => {
-    const [item,setItem]=useState()
+    const {item}=useSelector(state=>state.itemDetails)
+    console.log(`item: ${item}`);
     const dispatch = useDispatch();
-    const fromState = useSelector(state=>state.xxx.storeItems.find(item=>item._id===(match.params.id)))
-    const {addToCart} = bindActionCreators(actionCreators,dispatch)
-
-    const handleClick=()=>{
-        // addToCart(item)
-    }
+    
     useEffect(()=>{
-        console.log(item)
-        setItem(fromState)
-    },[fromState])
+        // console.log(item)
+        dispatch(getItem(match.params.id))
+    },[dispatch,match])
+    const handleClick=()=>{
+
+    }
     return (
         <>
         {item?(<Grid xs={12} container className="product-page">

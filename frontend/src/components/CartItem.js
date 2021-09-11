@@ -10,10 +10,10 @@ const CartItem = ({item,edit}) => {
         setQuantity(e.target.value)
         // edit(e.target.value)
     }
-    useEffect(() => {
-        if(item.qty!==quantity)edit({...item,qty:quantity})
-        // eslint-disable-next-line
-    }, [quantity])
+    // useEffect(() => {
+    //     if(item.qty!==quantity)edit({...item,qty:quantity})
+    //     // eslint-disable-next-line
+    // }, [quantity])
     return (
         <div className="cart-item">
             <div className="thumbnail">

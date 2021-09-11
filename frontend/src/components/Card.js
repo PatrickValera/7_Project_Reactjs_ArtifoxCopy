@@ -2,7 +2,7 @@ import React from 'react'
 import { capitalizeFirstLetter } from '../utils'
 import { Link } from 'react-router-dom'
 const Card = ({item}) => {
-    console.log(item._id)
+    // console.log(item._id)
     return (
            <Link to={`/store/${item._id}`}>
         <div className="card">

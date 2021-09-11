@@ -46,14 +46,6 @@ const products=[{
         main:'/images/notebook.jpeg',
         sub:'/images/notebooksub.jpeg'
     }
-},{
-    id:7,
-    name:"pencil cup",
-    price:40,
-    images:{
-        main:'/images/pencilcup.jpeg',
-        sub:'/images/pencilcupsub.jpeg'
-    }
-}]
+},]
 
 export default products

@@ -6,14 +6,13 @@ import Carousel from '../components/Carousel'
 import {Grid} from '@material-ui/core'
 // import { addToCart } from '../global/actioncreators/cartItemsActions'
 import { getItem } from '../global/actioncreators/storeItemActions'
-
+import {Box, Typography} from '@material-ui/core'
+import Rating from '@material-ui/lab/Rating'
+import Accordions from '../components/Accordions'
 const ProductPage = ({match}) => {
     const dispatch = useDispatch();
     const {product,loading}=useSelector(state=>state.itemDetails)
-    console.log(product)
-    // console.log(loading)
     useEffect(()=>{
-        // console.log(match.params.id)
         dispatch(getItem(match.params.id))
     },[dispatch,match])
     const handleClick=()=>{
@@ -21,17 +20,22 @@ const ProductPage = ({match}) => {
     }
     return (
         <>
-      
         {!loading?(<Grid xs={12} container className="product-page">
-        <Grid item  xs={12} md={4}className="product-info">
+        <Grid item  xs={12} md={5} lg={4} xl={3}className="product-info">
             <div className="sticky-container">
-                    <h3 className="name">{product.name}</h3>
-                    <span className="price">${product.price}</span>
-                    <button className="checkout-button" onClick={handleClick}>ADD TO CART</button>
+                    <h3 className="name">{`${product.name}${product.tag.length>0?` - ${product.tag[0]}`:""}`}</h3>
+                    <Box component="fieldset" mb={3} borderColor="transparent" className="rating">
+                        <Rating name="read-only" value={4} readOnly size='small' />
+                        <span>43 reviews</span>
+                    </Box>
+                    <span className="price">{product.price.toLocaleString()}</span>
+                    <button className="checkout-button" onClick={handleClick}>Add to cart</button>
+                    <Typography variant="subtitle2" className="affirm-link">Starting at $118/mo with <b>affirm</b>. <a href="/">Learn more</a></Typography>
+                    <Typography variant="subtitle2" className="shipping-text"><em>Now Shipping</em></Typography>
+                    {product.details&&<Accordions details={product.details}/>}
             </div>
-            
         </Grid>
-        <Grid item xs={12} md={8}className="gallery">
+        <Grid item xs={12} md={7} lg={8} xl={9} className="gallery">
             <Carousel item={product}/>
         </Grid>
 

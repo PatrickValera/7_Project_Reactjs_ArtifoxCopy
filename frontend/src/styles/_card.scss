@@ -46,9 +46,9 @@
       display: inline;
       position: relative;
       width: 100%;
-      font-size: 1.2em;
-      font-weight: 500;
-      letter-spacing: 0.05em;
+      font-size: 1.25em;
+      font-weight: 600;
+      letter-spacing: 0.02em;
       &::before {
         content: "";
         position: absolute;
@@ -61,7 +61,7 @@
     }
     .price {
       display: block;
-      font-size: 0.7em;
+      font-size: 0.82em;
     }
   }
 }

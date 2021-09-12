@@ -15,7 +15,7 @@ const Card = ({item}) => {
             </div>
             <div className="card-detail">
                 <h3 className="name">{capitalizeFirstLetter(item.name)}</h3>
-                <span className="price">${item.price}</span>
+                <span className="price">${item.price.toLocaleString()}</span>
             </div>
         </div>
              </Link>

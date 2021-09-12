@@ -1,5 +1,16 @@
 import mongoose from 'mongoose'
 
+const detailsSchema=mongoose.Schema({
+    description:String,
+    features:Array,
+    specification:{
+        dimension:String,
+        weight:String,
+        materials:Array
+    }
+},{
+    _id:false
+})
 const productSchema = mongoose.Schema({
     name:{
         type:String,
@@ -10,19 +21,17 @@ const productSchema = mongoose.Schema({
         required:true,
         default:0
     },
+    tag:Array,
     images:{
-        main:{
-            type:String
-        },
-        sub:{
-            type:String
-        }
+        main:String,
+        sub:String
     },
     featured:{
         type:Boolean,
         required:true,
         default:false
     },
+    details:detailsSchema,
 },{
     timestamps:true
 })

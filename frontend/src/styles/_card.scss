@@ -2,6 +2,8 @@
   color: #000;
   transition: 0.25s linear;
   z-index: 10;
+  padding-bottom: 3rem;
+  position: relative;
   &:hover {
     .name::before {
       width: 100% !important;
@@ -36,6 +38,8 @@
     }
   }
   .card-detail {
+    bottom: 0;
+    position: absolute;
     text-align: left;
     padding: 0.5rem 0 0 0.5rem;
     .name {

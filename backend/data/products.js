@@ -1,27 +1,41 @@
 const products=[{
     id:1,
-    name:"tables",
-    price:100,
+    name:"Desk",
+    collection:["Walnut"],
+    price:1300,
     images:{
-        main:'/images/table.jpeg',
-        sub:'/images/tablesub.jpeg'
-    }
+        main:'/images/desk.jpg',
+        sub:'/images/desksub.jpg'
+    },
+    featured:true
+
 },{
     id:2,
-    name:"stand",
-    price:100,
+    name:"Large Stand",
+    collection:["Walnut"],
+    price:150,
     images:{
         main:'/images/stand.jpeg',
         sub:'/images/standsub.jpeg'
-    }
+    },
+    featured:false
 },{
     id:3,
     name:"small stand",
-    price:99,
+    collection:["Walnut"],
+    price:65,
     images:{
         main:'/images/smallstand.jpeg',
         sub:'/images/smallstandsub.jpeg'
     }
+},{
+    name:"Slate",
+    price:25,
+    images:{
+        main:'/images/slate.jpg',
+        sub:'images/slatesub.jpg'
+    },
+    featured:false
 },{
     id:4,
     name:"mini shelf",

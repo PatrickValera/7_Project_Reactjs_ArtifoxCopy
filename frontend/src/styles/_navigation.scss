@@ -2,11 +2,10 @@
 
 .navigation {
   width: $navigation-width;
-  position: absolute;
-  top: 0;
-  bottom: 0;
+  position: fixed;
+  border-right: 1px #f3f3f3 solid;
+  height: 100vh;
   padding: 0 1.5rem;
-
   background-color: $main;
   @media screen and (max-width: $mobile) {
     display: none;
@@ -28,6 +27,7 @@
       }
     }
   }
+
   .nav-list-primary,
   .nav-list-secondary {
     .nav-list-item-box {
@@ -50,7 +50,7 @@
     }
     .nav-list-item {
       display: block;
-      padding: 0.5rem 1rem;
+      padding: 0.3rem 1rem;
       position: relative;
       .fas {
         top: 15px;
@@ -82,8 +82,11 @@
   .nav-list-secondary {
     padding-top: 3rem;
     .nav-list-item-text {
-      font-size: 0.8rem;
+      font-size: 0.84rem;
       font-weight: 400;
+      &:after {
+        bottom: 2px;
+      }
     }
   }
 }

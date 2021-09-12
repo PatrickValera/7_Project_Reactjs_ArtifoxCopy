@@ -17,3 +17,31 @@
     margin-left: 0;
   }
 }
+.main-store {
+  padding: 2rem;
+  .crumb-text {
+    letter-spacing: 0.02rem;
+    font-size: 0.7rem;
+    color: rgb(0, 0, 0);
+  }
+  .active {
+    color: rgb(168, 168, 168);
+  }
+  .MuiBreadcrumbs-separator {
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+  header {
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      padding: 1rem 0 3.5rem 0;
+    }
+    span {
+      font-size: 0.9rem;
+      color: rgb(75, 75, 75);
+    }
+  }
+}

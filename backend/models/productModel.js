@@ -17,7 +17,12 @@ const productSchema = mongoose.Schema({
         sub:{
             type:String
         }
-    }
+    },
+    featured:{
+        type:Boolean,
+        required:true,
+        default:false
+    },
 },{
     timestamps:true
 })

@@ -30,4 +30,7 @@ Grid.propTypes={
     lg:PropTypes.number,
     featured:PropTypes.bool
 }
+Grid.defaultProps = {
+  featured: false
+};
 export default Grid

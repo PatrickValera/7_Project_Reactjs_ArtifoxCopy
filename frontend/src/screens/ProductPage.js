@@ -8,12 +8,12 @@ import {Grid} from '@material-ui/core'
 import { getItem } from '../global/actioncreators/storeItemActions'
 
 const ProductPage = ({match}) => {
-    const {item}=useSelector(state=>state.itemDetails)
-    console.log(`item: ${item}`);
     const dispatch = useDispatch();
-    
+    const {product,loading}=useSelector(state=>state.itemDetails)
+    console.log(product)
+    // console.log(loading)
     useEffect(()=>{
-        // console.log(item)
+        // console.log(match.params.id)
         dispatch(getItem(match.params.id))
     },[dispatch,match])
     const handleClick=()=>{
@@ -21,17 +21,18 @@ const ProductPage = ({match}) => {
     }
     return (
         <>
-        {item?(<Grid xs={12} container className="product-page">
+      
+        {!loading?(<Grid xs={12} container className="product-page">
         <Grid item  xs={12} md={4}className="product-info">
             <div className="sticky-container">
-                    <h3 className="name">{item.name}</h3>
-                    <span className="price">${item.price}</span>
+                    <h3 className="name">{product.name}</h3>
+                    <span className="price">${product.price}</span>
                     <button className="checkout-button" onClick={handleClick}>ADD TO CART</button>
             </div>
             
         </Grid>
         <Grid item xs={12} md={8}className="gallery">
-            <Carousel item={item}/>
+            <Carousel item={product}/>
         </Grid>
 
     </Grid>):"LOADING"}

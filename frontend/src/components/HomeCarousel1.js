@@ -11,7 +11,7 @@ const Carousel = ({item}) => {
         else setCurrent(current-1)
     }
     const next = () =>{
-    if(current>=1)return
+    if(current>=3)return
     else setCurrent(current+1) 
     }
 
@@ -22,13 +22,21 @@ const Carousel = ({item}) => {
 
     return (
         <>
-        <div className="carousel-frame">
-            <div  className="carousel-slide" ref={ref}>
-               <div className="carousel-item">
-                    <img src={item.images.main} alt="" />
+        <div className="home-carousel1-frame">
+            <div  className="home-carousel1-slide" ref={ref}>
+               <div className="home-carousel1-item">
+                    <img src="/images/home/home-walnut-table-1.png" alt="" />
                 </div>
-                <div className="carousel-item">
-                    <img src={item.images.sub} alt="" />
+                <div className="home-carousel1-item">
+                    <img src="/images/home/home-walnut-table-2.jpg" alt="" />
+
+                </div>
+                <div className="home-carousel1-item">
+                    <img src="/images/home/home-bench.jpg" alt="" />
+                </div>
+                <div className="home-carousel1-item">
+                    <img src="/images/home/home-table.jpg" alt="" />
+
                 </div>
             </div>
             <button className="prev button" onClick={prev}>{`<`}</button>

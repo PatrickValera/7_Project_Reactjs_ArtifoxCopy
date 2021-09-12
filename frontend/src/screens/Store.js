@@ -8,7 +8,6 @@ import Card from '../components/Card'
 const Store = () => {
     const dispatch=useDispatch()
     const {storeItems}=useSelector((state)=>state.xxx)
-    console.log(useSelector((state)=>state))
 
     useEffect(()=>{
         dispatch(getStoreItems())

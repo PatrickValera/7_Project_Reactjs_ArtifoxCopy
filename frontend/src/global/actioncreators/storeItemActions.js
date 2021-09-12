@@ -23,12 +23,13 @@ export const getItem=(id)=>async(dispatch)=>{
             type:GET_APRODUCT_REQUEST,
             payload:{}
         })
-        const {data}= axios.get(`/api/products/${id}`)
+        const {data}=await axios.get(`/api/products/${id}`)
         dispatch({
             type:GET_APRODUCT_SUCCESS,
             payload:data
         })
-    } catch(error){
-        console.log(error)
+    }catch(error){
+        console.log("PRODUCT ACTION ERROR")
+    
     }
 }

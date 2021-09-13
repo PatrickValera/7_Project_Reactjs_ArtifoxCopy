@@ -124,10 +124,15 @@ $large: 1200px;
 .grid_item {
   justify-content: center;
   text-align: center;
+  // background-color: red;
 }
 .featured {
   grid-column: span 6 !important;
   grid-row: span 2;
+  .image-figure{
+    // padding-top: 120% !important;
+    // padding-top: calc(100%+100%) !important;
+  }
 }
 @media screen and (min-width: 0px) {
   @include xtrasmall;

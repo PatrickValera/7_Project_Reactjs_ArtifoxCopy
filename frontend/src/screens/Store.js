@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import {getStoreItems} from '../global/actioncreators/storeItemActions'
 import {Breadcrumbs,Link } from '@material-ui/core'
 import Grid from '../components/Grid'
+// import {Grid} from '@material-ui/core'
 import Card from '../components/Card'
 
 const Store = () => {
@@ -31,6 +32,12 @@ const Store = () => {
                         <Card item={item}/>
                     </Grid>))}
             </Grid>
+            {/* <Grid container spacing={2}>
+                {storeItems.map(item=>(
+                    <Grid item key={item._id} md={3} xs={6}>
+                        <Card item={item}/>
+                    </Grid>))}
+            </Grid> */}
          
            
         </div>

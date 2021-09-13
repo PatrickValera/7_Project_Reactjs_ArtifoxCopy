@@ -45,3 +45,13 @@
     }
   }
 }
+
+.register-page {
+  margin: auto;
+  .register-form {
+    max-width: 800px;
+    min-width: 400px;
+    width: 60%;
+    background-color: red;
+  }
+}

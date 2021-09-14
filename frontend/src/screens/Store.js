@@ -8,8 +8,8 @@ import Card from '../components/Card'
 
 const Store = () => {
     const dispatch=useDispatch()
-    const {storeItems}=useSelector((state)=>state.xxx)
-    console.log(storeItems)
+    const {storeItems}=useSelector((state)=>state.storeItems)
+    // console.log(storeItems)
     useEffect(()=>{
         dispatch(getStoreItems())
     },[dispatch])
@@ -26,20 +26,12 @@ const Store = () => {
                 <h2>All Artifacts</h2>
                 <span>Minimalist products for your home and office</span>
             </header>
-            <Grid container xs={12} spacing={1}>
+            <Grid container xs={12} spacing={2}>
                 {storeItems.map(item=>(
                     <Grid item key={item._id} lg={3} xs={6} featured={item.featured}>
                         <Card item={item}/>
                     </Grid>))}
             </Grid>
-            {/* <Grid container spacing={2}>
-                {storeItems.map(item=>(
-                    <Grid item key={item._id} md={3} xs={6}>
-                        <Card item={item}/>
-                    </Grid>))}
-            </Grid> */}
-         
-           
         </div>
     )
 }

@@ -1,0 +1,44 @@
+.home {
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 5%;
+  }
+  .card {
+    padding: 0 5%;
+    flex: 1 0 200px;
+    .image-container {
+      //   background-color: red;
+      min-height: 150px;
+      max-height: 150px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      figure {
+        padding-top: 100%;
+        position: relative;
+        display: flex;
+        // align-items: center;
+        vertical-align: middle;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .text-container {
+      min-height: 50px;
+      //   background-color: green;
+      .title {
+        padding-bottom: 1rem;
+      }
+      .content {
+        font-size: 0.8rem;
+        line-height: 1.8;
+      }
+    }
+  }
+}

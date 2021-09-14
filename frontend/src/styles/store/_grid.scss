@@ -101,16 +101,26 @@ $large: 1200px;
 }
 @mixin spacing {
   .spacing-1 {
-    gap: 1rem;
+    gap: 12px;
   }
   .spacing-2 {
-    gap: 20px;
+    gap: 24px;
   }
   .spacing-3 {
     gap: 30px;
   }
   .spacing-4 {
     gap: 40px;
+  }
+}
+@mixin featured-small {
+  .featured {
+    grid-column: span 12;
+  }
+}
+@mixin featured-large {
+  .featured {
+    grid-column: span 6;
   }
 }
 
@@ -127,17 +137,17 @@ $large: 1200px;
   // background-color: red;
 }
 .featured {
-  grid-column: span 6 !important;
   grid-row: span 2;
-  .image-figure{
-    // padding-top: 120% !important;
-    // padding-top: calc(100%+100%) !important;
+  .card-image-container {
+    padding-bottom: 5rem;
   }
 }
 @media screen and (min-width: 0px) {
   @include xtrasmall;
+  @include featured-small;
 }
 @media screen and (min-width: $mobile) {
   @include large;
+  @include featured-large;
 }
 @include spacing;

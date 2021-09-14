@@ -1,7 +1,8 @@
 @import "variables";
-@import "navigation", "footer", "grid", "card", "cartitem", "productpage",
-  "carousel";
-@import "homeScreen/carousel1";
+@import "navigation", "footer", "cartitem";
+@import "store/card", "store/grid";
+@import "productpage/productpage", "productpage/carousel";
+@import "home/home", "home/carousel1";
 
 * {
   box-sizing: border-box;
@@ -33,11 +34,12 @@
     margin-right: 0.3rem;
   }
   header {
+    padding: 1rem 0 0 0.5rem;
     h2 {
       font-size: 1.8rem;
       font-weight: 600;
       letter-spacing: 0.05rem;
-      padding: 1rem 0 3.5rem 0;
+      padding: 1rem 0 2rem 0;
     }
     span {
       font-size: 0.9rem;

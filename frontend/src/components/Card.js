@@ -2,7 +2,7 @@ import React from 'react'
 import { capitalizeFirstLetter } from '../utils'
 import { Link } from 'react-router-dom'
 const Card = ({item}) => {
-    // console.log(item._id)
+
     return (
            <Link to={`/store/${item._id}`}>
         <div className="card">
@@ -14,7 +14,7 @@ const Card = ({item}) => {
                 </div>
             </div>
             <div className="card-detail">
-                <h3 className="name">{capitalizeFirstLetter(item.name)}</h3>
+                <div className="name">{capitalizeFirstLetter(item.name)}{item.tag.length>0?` - ${item.tag[0]}`:""}</div>
                 <span className="price">${item.price.toLocaleString()}</span>
             </div>
         </div>
@@ -22,4 +22,16 @@ const Card = ({item}) => {
     )
 }
 
+Card.defaultProps = {
+    item:{
+            _id:1111,
+            name:"n/a",
+            images:{
+                sub:'/',
+                main:'/'
+            },
+            price:0,
+            tag:["n/a"]
+        }
+}
 export default Card

@@ -8,7 +8,7 @@ import thunk from 'redux-thunk'
 const reducers=combineReducers({
     itemDetails:itemDetailsReducer,
     cartItems:cartItemsReducer,
-    xxx:storeItemsReducer,
+    storeItems:storeItemsReducer,
 })
 
 const store = createStore(reducers,{},applyMiddleware(thunk))

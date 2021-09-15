@@ -7,9 +7,9 @@ const Register = () => {
             <h1>Create an account</h1>
             <form action="" className="register-form">
                 <div className="input-container">
-                    <label htmlFor="firstName"></label>
+                    {/* <label htmlFor="firstName"></label> */}
                     <input type="text" placeholder="First Name"/>
-                    <label htmlFor="lastName"></label>
+                    {/* <label htmlFor="lastName"></label> */}
                     <input type="text" placeholder="Last Name"/>
                 </div>
                 <div className="input-container">
@@ -20,6 +20,9 @@ const Register = () => {
                     <label htmlFor="password"></label>
                     <input type="password" placeholder="Password"/>
                 </div>
+
+                    <button>Create</button>
+
             </form>
         </div>
         </div>

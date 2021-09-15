@@ -17,9 +17,9 @@ router.get(
 router.get(
     '/:id',
     asyncHandler(async(req,res)=>{
-        // console.log(req.params.id)
         const product =await Product.findById(req.params.id)
         if(product){
+            // console.log(product)
             res.status(200)
             res.json(product)
         } else {

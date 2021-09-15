@@ -6,29 +6,28 @@ import CartItem from '../components/CartItem'
 // import { actionCreators } from '../global/actioncreators/index'
 
 const Cart = () => {
-    // const [total,setTotal]=useState(0)
-    // const dispatch=useDispatch()
-    // const {cartItems}=useSelector(state=>state)
-    // const {editQty}=bindActionCreators(actionCreators,dispatch);
-    const{list}=useSelector(state=>state.cartItems)
+    // const list=[]
+    const s=useSelector(state=>state.cartItems)
+    const list = s.list
     useEffect(() => {
-        console.log(list);
-        // console.log(`changing total`);
-        // setTotal(0)
-        // cartItems.forEach(item=>{
-        //     setTotal(state=>(state+(item.price*item.qty)))
-        // })
-    }, [list])
+    }, [])
 
     return (
-        <div className="cart-item-container">
+        <>
+        <div className="cart">
+            <h3>Shopping Cart</h3>
+            <span>{`${list.length} product${list.length>1?'s':''} in your cart`}</span>
+        
+        {list.length>0?<div className="cart-item-container">
             {list?<>
                 { list.map((item)=>(<CartItem item={item} key={item.id} />))}
-                <button>CHEKCK OUT</button>
-                {/* <span>{total}</span> */}
             </>:"EMPTY"}
-           
+            <button>Check out</button>
         </div>
+        :
+        "EMPTY CART"}
+        </div>
+        </>
 
     )
 }

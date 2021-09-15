@@ -1,0 +1,29 @@
+.cart {
+  width: 60%;
+  max-width: 800px;
+  padding-top: 20vh;
+  margin: 0 auto;
+  min-height: 100vh;
+  h3 {
+    font-size: 1.8rem;
+    padding-bottom: 3rem;
+  }
+  span {
+    font-size: 0.75rem;
+  }
+  .cart-item-container {
+    // margin-top: 5rem;
+    padding-top: 2rem;
+  }
+  button {
+    border: none;
+    padding: 1rem 5rem;
+    background-color: black;
+    color: white;
+    transition: 0.2s linear;
+    &:hover {
+      color: black;
+      background-color: rgb(219, 219, 219);
+    }
+  }
+}

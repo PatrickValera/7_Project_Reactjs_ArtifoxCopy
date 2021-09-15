@@ -10,7 +10,11 @@ const reducers=combineReducers({
     cartItems:cartItemsReducer,
     storeItems:storeItemsReducer,
 })
+const cartItemsFromStorage = localStorage.getItem('cartList')?JSON.parse(localStorage.getItem('cartList')):[]
 
-const store = createStore(reducers,{},applyMiddleware(thunk))
+const initialState={
+    cartItems:{list:cartItemsFromStorage}
+}
+const store = createStore(reducers,initialState,applyMiddleware(thunk))
 
 export default store

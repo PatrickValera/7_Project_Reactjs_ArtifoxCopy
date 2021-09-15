@@ -9,15 +9,19 @@ import { getItem } from '../global/actioncreators/storeItemActions'
 import {Box, Typography} from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 import Accordions from '../components/Accordions'
+import { addToCart } from '../global/actioncreators/cartItemsActions'
+
 const ProductPage = ({match}) => {
     const dispatch = useDispatch();
     const {product,loading}=useSelector(state=>state.itemDetails)
     useEffect(()=>{
         dispatch(getItem(match.params.id))
     },[dispatch,match])
-    const handleClick=()=>{
-
+    
+    const clickHandler=(id)=>{
+        dispatch(addToCart(id))
     }
+    
     return (
         <>
         {!loading?(<Grid xs={12} container className="product-page">
@@ -29,7 +33,7 @@ const ProductPage = ({match}) => {
                         <span>43 reviews</span>
                     </Box>
                     <span className="price">{product.price.toLocaleString()}</span>
-                    <button className="checkout-button" onClick={handleClick}>Add to cart</button>
+                    <button className="checkout-button" onClick={()=>clickHandler(product._id)}>Add to cart</button>
                     <Typography variant="subtitle2" className="affirm-link">Starting at $118/mo with <b>affirm</b>. <a href="/">Learn more</a></Typography>
                     <Typography variant="subtitle2" className="shipping-text"><em>Now Shipping</em></Typography>
                     {product.details&&<Accordions details={product.details}/>}

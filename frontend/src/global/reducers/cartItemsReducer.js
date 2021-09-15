@@ -1,13 +1,4 @@
-const cartItemsReducer = (state={list:[{
-                id:2,
-                name:"stand",
-                price:100,
-                images:{
-                    main:'/images/stand.jpeg',
-                    sub:'/images/standsub.jpeg'
-                },
-                qty:1
-}]},action) =>{
+const cartItemsReducer = (state={list:[]},action) =>{
     switch(action.type){
         case "ADD_TO_CART":{
             return {

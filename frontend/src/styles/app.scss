@@ -1,9 +1,9 @@
 @import "variables";
-@import "navigation", "footer", "cartitem";
+@import "navigation", "footer";
 @import "store/card", "store/grid";
 @import "productpage/productpage", "productpage/carousel";
 @import "home/home", "home/carousel1";
-
+@import "cart/cart", "cart/cartitem";
 * {
   box-sizing: border-box;
   margin: 0;

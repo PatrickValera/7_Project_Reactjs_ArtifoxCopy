@@ -22,7 +22,7 @@ const Cart = () => {
             {list?<>
                 { list.map((item)=>(<CartItem item={item} key={item.id} />))}
             </>:"EMPTY"}
-            <button>Check out</button>
+            <button>Check Out</button>
         </div>
         :
         "EMPTY CART"}

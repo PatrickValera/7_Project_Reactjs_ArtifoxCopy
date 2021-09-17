@@ -1,6 +1,6 @@
 @import "variables";
 
-.navigation {
+.navigation-primary,.navigation-secondary {
   width: $navigation-width;
   position: fixed;
   border-right: 1px #f3f3f3 solid;
@@ -89,4 +89,15 @@
       }
     }
   }
+}
+.navigation-secondary{
+  left: $navigation-width;
+  // background-color: red;
+  z-index: 1000;
+  transform: translateX(0);
+  transition: $transition;
+}
+.hidden{
+  opacity: 0;
+transform: translatex(-50px);  
 }

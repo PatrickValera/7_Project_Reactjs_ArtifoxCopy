@@ -19,8 +19,8 @@ const Home = () =>{
         <div className="home">
             <HomeCarousel1/>
               <div className="card-container">
-            {cards.map(card=>(
-                <div className="card">
+            {cards.map((card,index)=>(
+                <div className="card" key={index}>
                     <div className="image-container">
                         <figure>
                             <img src={card.image} alt="" />

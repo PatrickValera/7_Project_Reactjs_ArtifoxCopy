@@ -16,16 +16,19 @@ const productSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    colors:Array,
+    tags:Array,
     price:{
         type:Number,
         required:true,
         default:0
     },
-    tag:Array,
+
     images:{
         main:String,
         sub:String
     },
+
     featured:{
         type:Boolean,
         required:true,

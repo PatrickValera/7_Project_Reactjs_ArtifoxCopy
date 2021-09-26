@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Card = ({item}) => {
 
     return (
-           <Link to={`/store/${item._id}`}>
+        <Link to={`/product/${item._id}`}>
         <div className="card">
             <div className="card-image-container">
                 <div className="image-figure">
@@ -14,11 +14,11 @@ const Card = ({item}) => {
                 </div>
             </div>
             <div className="card-detail">
-                <div className="name">{capitalizeFirstLetter(item.name)}{item.tag.length>0?` - ${item.tag[0]}`:""}</div>
+                <div className="name">{capitalizeFirstLetter(item.name)}{item.colors.length>0?` - ${item.colors[0]}`:""}</div>
                 <span className="price">${item.price.toLocaleString()}</span>
             </div>
         </div>
-             </Link>
+        </Link>
     )
 }
 

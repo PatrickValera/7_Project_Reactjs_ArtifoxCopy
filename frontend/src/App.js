@@ -16,9 +16,9 @@ function App() {
       <Navigation/>
       <Container>
         <Route path='/' exact component={Home}/>
-        <Route path='/store' exact component={Store}/>
+        <Route path='/products' component={Store}/>
         <Route path='/cart' component={Cart}/>
-        <Route path='/store/:id' component={ProductPage}/>
+        <Route path='/product/:id' component={ProductPage}/>
         <Route path='/register' component={Register}/>
         <Footer/>
       </Container>

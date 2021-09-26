@@ -1,0 +1,118 @@
+@import "../variables";
+
+.navigation {
+  .navigation-primary,
+  .navigation-secondary {
+    width: $navigation-width;
+    position: fixed;
+    border-right: 1px #f3f3f3 solid;
+    height: 100vh;
+    background-color: $main;
+    z-index: 100;
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+    .nav-header {
+      padding: 0 1.5rem;
+      .logo {
+        max-width: 100%;
+        padding: 6rem 3.5rem 3rem 1rem;
+      }
+      .cart-icon {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        .cart-count {
+          color: #000;
+          position: absolute;
+          left: 8px;
+          top: 7px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .nav-list-primary,
+    .nav-list-secondary {
+      .nav-list-item-box {
+        // background-color: red;
+        &:hover {
+          .nav-list-item-text {
+            text-shadow: none;
+            color: #ddd;
+            &::after {
+              background-color: #ddd;
+              width: 100%;
+            }
+          }
+          .fas {
+            color: #ddd;
+            right: 40px;
+          }
+        }
+      }
+      .nav-list-item {
+        display: block;
+        padding: 0.3rem 1.3rem 0.3rem 2.2rem;
+        position: relative;
+        .fas {
+          top: 15px;
+          position: absolute;
+          right: 45px;
+          font-size: 0.8rem;
+          color: black;
+          transition: $transition;
+        }
+      }
+      .nav-list-item-text {
+        position: relative;
+        @include main-font;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 3px;
+          left: 0;
+          width: 0;
+          height: 0.01rem;
+          background-color: #000;
+          transition: $transition;
+        }
+      }
+    }
+    .nav-list-secondary {
+      padding-top: 3rem;
+      .nav-list-item-text {
+        font-size: 0.84rem;
+        font-weight: 400;
+        &:after {
+          bottom: 2px;
+        }
+      }
+    }
+  }
+  .navigation-secondary {
+    left: $navigation-width;
+    transform: translateX(0);
+    transition: $transition;
+    padding: 13rem 3rem 3rem 0.6rem;
+  }
+  .hidden {
+    opacity: 0;
+    transform: translatex(-50px);
+    pointer-events: none;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition: 0.15s linear;
+    pointer-events: none;
+  }
+  .dark {
+    background-color: #000;
+    filter: opacity(60%);
+  }
+}

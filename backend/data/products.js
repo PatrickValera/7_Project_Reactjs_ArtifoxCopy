@@ -1,7 +1,76 @@
 const products=[{
-    id:1,
+    name:"Table",
+    tags:["desk"],
+    colors:["Black Oak"],
+    price:2400,
+    images:{
+        main:'/images/table.jpg',
+        sub:'/images/tablesub.jpg'
+    },
+    featured:true
+},{
+    name:"Side",
+    tags:["side"],
+    colors:["Walnut"],
+    price:850,
+    images:{
+        main:'/images/side.jpg',
+        sub:'/images/sidesub.jpg'
+    },
+    featured:false
+},{
+    name:"Shelf",
+    tags:["shelf"],
+    colors:["Black"],
+    price:99,
+    images:{
+        main:'/images/shelf.jpg',
+        sub:'/images/shelfsub.jpg'
+    },
+    featured:false
+},{
+    name:"Lift",
+    tags:["lift"],
+    colors:["Walnut"],
+    price:350,
+    images:{
+        main:'/images/lift.jpg',
+        sub:'/images/liftsub.jpg'
+    },
+    featured:false
+},{
+    name:"Magazine Holder",
+    tags:["desk"],
+    colors:["Smoke"],
+    price:60,
+    images:{
+        main:'/images/magazineholder.jpg',
+        sub:'/images/magazineholdersub.jpg'
+    },
+    featured:false
+},{
+    name:"Large Stand",
+    tags:["desk"],
+    colors:["Walnut"],
+    price:150,
+    images:{
+        main:'/images/stand.jpeg',
+        sub:'/images/standsub.jpeg'
+    },
+    featured:false
+},{
+    name:"small stand",
+    tags:["desk"],
+    colors:["Walnut"],
+    price:65,
+    images:{
+        main:'/images/smallstand.jpeg',
+        sub:'/images/smallstandsub.jpeg'
+    }
+},{
     name:"Desk",
-    tag:["Walnut"],
+    tags:["desk"],
+    colors:["Walnut"],
     price:1300,
     images:{
         main:'/images/desk.jpg',
@@ -19,42 +88,31 @@ const products=[{
     }
 
 },{
-    id:2,
-    name:"Large Stand",
-    tag:["Walnut"],
-    price:150,
-    images:{
-        main:'/images/stand.jpeg',
-        sub:'/images/standsub.jpeg'
-    },
-    featured:false
-},{
-    id:3,
-    name:"small stand",
-    tag:["Walnut"],
-    price:65,
-    images:{
-        main:'/images/smallstand.jpeg',
-        sub:'/images/smallstandsub.jpeg'
-    }
-},{
     name:"Slate",
     price:25,
     images:{
         main:'/images/slate.jpg',
-        sub:'images/slatesub.jpg'
+        sub:'/images/slatesub.jpg'
     },
     featured:false
 },{
-    id:4,
+    name:"tray",
+    tags:["shelf"],
+    colors:["black"],
+    price:45,
+    images:{
+        main:'/images/tray.jpg',
+        sub:'/images/traysub.jpg'
+    }
+},{
     name:"mini shelf",
+    tags:["shelf"],
     price:50,
     images:{
         main:'/images/minishelf.jpeg',
         sub:'/images/minishelfsub.jpeg'
     }
 },{
-    id:5,
     name:"hook",
     price:50,
     images:{
@@ -62,8 +120,8 @@ const products=[{
         sub:'/images/hooksub.jpeg'
     }
 },{
-    id:6,
     name:"notebook",
+    tags:["shelf"],
     price:20,
     images:{
         main:'/images/notebook.jpeg',

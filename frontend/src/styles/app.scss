@@ -1,9 +1,11 @@
 @import "variables";
-@import "navigation", "footer";
+@import "components/navigation", "components/footer";
 @import "store/card", "store/grid";
 @import "productpage/productpage", "productpage/carousel";
 @import "home/home", "home/carousel1";
 @import "cart/cart", "cart/cartitem";
+@import "pages/registration";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,19 +22,6 @@
 }
 .main-store {
   padding: 2rem;
-  .crumb-text {
-    letter-spacing: 0.02rem;
-    font-size: 0.7rem;
-    color: rgb(0, 0, 0);
-  }
-  .active {
-    color: rgb(168, 168, 168);
-  }
-  .MuiBreadcrumbs-separator {
-    font-size: 0.8rem;
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-  }
   header {
     padding: 1rem 0 0 0.5rem;
     h2 {
@@ -47,52 +36,19 @@
     }
   }
 }
-
-.register-page {
-  margin: auto;
-  padding-top: 10vh;
-  max-width: 1200px;
-  min-width: 400px;
-  width: 50%;
-  min-height: 80vh;
-  h1 {
-    font-size: 2rem;
+.breadcrumb {
+  padding-bottom: 2rem;
+  .crumb-text {
+    letter-spacing: 0.02rem;
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0);
   }
-  .register-form {
-    width: 100%;
-    padding: 2rem 0 5rem 0;
-    position: relative;
-    .input-container {
-      display: flex;
-      position: relative;
-      flex-wrap: wrap;
-
-      input {
-        padding: 15px;
-        flex: 1 1 auto;
-        font-size: 1.2rem;
-        border-radius: 0;
-        border: 1.5px solid #bbb;
-        // background-color: red;
-        margin: 0.5rem;
-      }
-      input:focus {
-        border: 1.5px solid #bbb;
-      }
-    }
-    button {
-      padding: 1rem 8rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 0;
-      background-color: #111;
-      color: white;
-      margin: 0.5rem 0 0 0.5rem;
-      transition: 0.2s linear;
-      &:hover {
-        background-color: rgb(219, 219, 219);
-        color: #000;
-      }
-    }
+  .active {
+    color: rgb(168, 168, 168);
+  }
+  .MuiBreadcrumbs-separator {
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
   }
 }

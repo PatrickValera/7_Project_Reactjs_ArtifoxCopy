@@ -1,13 +1,13 @@
 import {GET_APRODUCT_REQUEST, GET_APRODUCT_SUCCESS, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS} from '../constants/storeitemConstants'
 import axios from 'axios'
 
-export const getStoreItems=()=>async(dispatch)=>{
+export const getStoreItems=(pathName)=>async(dispatch)=>{
     try{
         dispatch({
             type:GET_PRODUCTS_REQUEST,
             payload:[]}
         )
-        const {data}=await axios.get('/api/products')
+        const {data}=await axios.get('/api'+pathName)
         dispatch({
             type:GET_PRODUCTS_SUCCESS,
             payload:data

@@ -8,18 +8,19 @@ import asyncHandler from 'express-async-handler'
 // @access      Public
 
 router.get(
-    '/',
+    ['/','/new','/desk','/shelf','/side','/lift','/table','/bench'],
     asyncHandler(async(req,res)=>{
-        const products =await Product.find({})
+        const collection=req.url.split('/')[1]
+        const products =await Product.find(collection?{tags:[collection]}:{})
         res.json(products)
 }))
+
 
 router.get(
     '/:id',
     asyncHandler(async(req,res)=>{
         const product =await Product.findById(req.params.id)
         if(product){
-            // console.log(product)
             res.status(200)
             res.json(product)
         } else {

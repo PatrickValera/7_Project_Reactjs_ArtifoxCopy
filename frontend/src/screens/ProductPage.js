@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react'
-import { useSelector,useDispatch } from 'react-redux'
 import Carousel from '../components/Carousel'
 import {Grid} from '@material-ui/core'
 import { getItem } from '../global/actioncreators/storeItemActions'
@@ -8,6 +7,7 @@ import Rating from '@material-ui/lab/Rating'
 import Accordions from '../components/Accordions'
 import { addToCart } from '../global/actioncreators/cartItemsActions'
 import { Breadcrumbs } from '@material-ui/core'
+import { useSelector,useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const ProductPage = ({match}) => {
@@ -15,10 +15,7 @@ const ProductPage = ({match}) => {
     const {product,loading}=useSelector(state=>state.itemDetails)
     useEffect(()=>{
         dispatch(getItem(match.params.id))
-    console.log(product)
-
     },[dispatch,match])
-    
     const clickHandler=(id)=>{
         dispatch(addToCart(id))
     }
@@ -36,7 +33,7 @@ const ProductPage = ({match}) => {
     }
     return (
         <>
-        {!loading?(<div className="product-page">
+        {loading?"LOADING":(<div className="product-page">
         <Grid xs={12} container className="main-details">
         <Grid item  sm={12} md={4} lg={4} xl={3}className="product-info">
             <div className="sticky-container">
@@ -52,18 +49,23 @@ const ProductPage = ({match}) => {
                 <h3 className="name">{`${product.name}${product.colors.length>0?` - ${product.colors[0]}`:""}`}</h3>
                 <Box component="fieldset" mb={3} borderColor="transparent" className="rating">
                     <Rating name="read-only" value={4} readOnly size='small' />
-                    <span>43 reviews</span>
+                    <span>test reviews</span>
                 </Box>
                 <span className="price">{product.price.toLocaleString()}</span>
+                <div className="form-product-variant">
                 {product.options&&
                     product.options.map(x=>(
                     <>  
-                        <label htmlFor="">{x.toString}</label>
+                        <label htmlFor="">{x.name}</label>
                         <select name="" id="">
-                            <option value="test">fff</option>
+                            {x.choices.map((x)=>(
+                            <option value={x} className="option">{x}</option>
+                            ))}
                         </select>
                     </>))
-                }
+                }   
+                </div>
+                
                 <button className="checkout-button" onClick={()=>clickHandler(product._id)}>Add to cart</button>
                 <Typography variant="subtitle2" className="affirm-link">{`Starting at $${(product.price/12).toFixed(0)}/mo with `}<b>affirm</b>. <a href="/">Learn more</a></Typography>
                 <Typography variant="subtitle2" className="shipping-text"><em>Now Shipping</em></Typography>
@@ -80,7 +82,7 @@ const ProductPage = ({match}) => {
             <div className={`nav-button`} onClick={()=>handleNavClick("collection")}>Collection</div>
         </nav>
         <div className="details" id="details">
-            <video src="/videos/White_Oak_Table.mp4" autoPlay muted loop></video>
+            <video src={product.video?product.video:"/videos/White_Oak_Table.mp4"} autoPlay muted loop></video>
         </div>
         {product.quality&&
             <div className="quality" id="quality">
@@ -108,7 +110,7 @@ const ProductPage = ({match}) => {
         <div className="collection" id="collection">
             collection
         </div>
-        </div>):"LOADING"}
+        </div>)}
         </>
     )
 }

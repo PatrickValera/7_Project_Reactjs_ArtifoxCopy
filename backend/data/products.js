@@ -17,7 +17,37 @@ const products=[{
         main:'/images/side.jpg',
         sub:'/images/sidesub.jpg'
     },
-    featured:false
+    video:"/videos/Side.mp4",
+    featured:false,
+    details:{
+        description:"This well-rounded walnut side table fits perfectly in the workspace, lounging space or sleeping space. Dock storage on top for your phone, tablet or accessories all with cables managed below. Drawer storage for books, tech or everyday objects. Made in the USA.",
+        features:["Built in dock for modular accessories and phones","Metal grid for attaching cables","Hidden cable management","Shelf for laptops","Deep drawer that can be used for file cabinet or everyday storage"],
+        specification:{
+            dimension:`50"`,
+            weight:"50 lbs",
+            materials:["solid walnut","powder-coated steel"]
+        }
+    },
+    options:[
+        {name:"Cabinet",choices:["Walnut","Bone"]}
+    ],    
+    quality:{
+        image:"/images/sidequality.jpg",
+        qualities:[
+            {   image:"/icons/icon-dock.png",
+                title:"BUILT-IN DOCK",
+                subheading:"A modular system that allows you to attach accessories and create your own set-up."
+            },{
+                image:"/icons/icon-cables.png",
+                title:"CABLE MANAGEMENT",
+                subheading:"Easily manage cords and power strips by attaching them to the cable grid."
+            },{
+                image:"/icons/icon-backpack.png",
+                title:"HOOKS",
+                subheading:"Conveniently placed within reach for bags and headphones."
+            }
+        ]
+    }
 },{
     name:"Shelf",
     tags:["shelf"],
@@ -37,19 +67,7 @@ const products=[{
         main:'/images/lift.jpg',
         sub:'/images/liftsub.jpg'
     },
-    featured:false,
-    details:{
-        description:"This well-rounded walnut side table fits perfectly in the workspace, lounging space or sleeping space. Dock storage on top for your phone, tablet or accessories all with cables managed below. Drawer storage for books, tech or everyday objects. Made in the USA.",
-        features:["Built in dock for modular accessories and phones","Metal grid for attaching cables","Hidden cable management","Shelf for laptops","Deep drawer that can be used for file cabinet or everyday storage"],
-        specification:{
-            dimension:`50"`,
-            weight:"50 lbs",
-            materials:["solid walnut","powder-coated steel"]
-        }
-    },
-    options:[
-        {cabinet:["Bone","Walnut"]}
-    ]
+    featured:false
 },{
     name:"Magazine Holder",
     tags:["desk"],

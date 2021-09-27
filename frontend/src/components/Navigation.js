@@ -27,13 +27,16 @@ const Navigation = () => {
     }]
     const secondaryPages=[{
         title:"About",
-        link:"/"
+        link:"/",
+        icon:true,
     },{
         title:"Contact",
         link:"/"
     },{
         title:"Journal",
-        link:"/"
+        link:"/",
+        icon:true,
+
     }]
     const handleOpen=(e,secondaryRoutes)=>{
         secondNavRef.current.classList.remove("hidden")
@@ -79,7 +82,7 @@ const Navigation = () => {
                     <li className="nav-list-item-box" key={index}>
                         <Link className="nav-list-item" to={page.link} >
                             <span className="nav-list-item-text">{page.title}</span>
-                            {page.secondaryRoutes&&<i className="fas fa-chevron-right"></i>}
+                            {page.icon&&<i className="fas fa-chevron-right"></i>}
                         </Link>
                     </li>
                 ))}

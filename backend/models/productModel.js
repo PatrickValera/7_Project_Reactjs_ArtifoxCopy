@@ -34,7 +34,7 @@ const productSchema = mongoose.Schema({
         main:String,
         sub:String
     },
-
+    video:String,
     featured:{
         type:Boolean,
         required:true,
@@ -42,7 +42,7 @@ const productSchema = mongoose.Schema({
     },
     options:{
         type:Array,
-        default:["test"]
+        
     },
     details:detailsSchema,
     quality:qualitySchema

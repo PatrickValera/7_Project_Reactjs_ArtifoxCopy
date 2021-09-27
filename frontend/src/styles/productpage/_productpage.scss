@@ -29,16 +29,40 @@
         align-items: center;
         margin: 0.5rem 0 1rem;
       }
-
       .price {
         display: block;
         font-weight: 600;
         font-size: 1.2rem;
         letter-spacing: 0.03rem;
-        padding-bottom: 8rem;
         &::before {
           content: "$";
           padding-right: 5px;
+        }
+      }
+      .form-product-variant {
+        // background-color: green;
+        // border: 1px solid red;
+        width: 100%;
+        padding: 1rem 0;
+        position: relative;
+        label {
+          position: absolute;
+          top: 2px;
+          left: 10px;
+          font-size: 0.75rem;
+          color: #bbb;
+          background-color: #fff;
+          padding: 5px;
+          text-transform: uppercase;
+        }
+        select {
+          width: 100%;
+          font-size: 0.95rem;
+          padding: 0 1rem;
+          height: 60px;
+          border: 1px solid #bbb;
+          .option {
+          }
         }
       }
       .checkout-button {
@@ -73,7 +97,7 @@
             height: 1px;
             background-color: #000;
             position: absolute;
-            bottom: -2px;
+            bottom: -1px;
             left: 0;
           }
         }
@@ -176,42 +200,41 @@
     display: flex;
     flex-flow: wrap;
     .quality-container {
-      flex: 1 1 500px;
+      flex: 2 1 300px;
       vertical-align: middle;
       position: relative;
       .quality-list {
         display: flex;
         flex-direction: column;
-        padding-top: 30%;
+        padding: 10% 0;
         .wrapper {
           display: flex;
-          padding: 1rem 5rem;
+          padding: 1rem 3rem;
           color: #353535;
           .image-container {
-            flex: 1 1 100px;
-            margin-right: 1rem;
-            min-width: 80px;
+            flex: 0 0 50px;
+            margin-right: 0.5rem;
             height: 80px;
             img {
-              width: 100%;
+              width: 50px;
             }
           }
           .text-container {
-            flex: 1 1 100%;
+            flex: 3 1 300px;
             .title {
               text-transform: capitalize;
-              font-size: 1rem;
+              font-size: 0.9rem;
               font-weight: 600;
             }
             .subheading {
-              font-size: 0.9rem;
+              font-size: 0.8rem;
             }
           }
         }
       }
     }
     .quality-image {
-      flex: 1 1 600px;
+      flex: 1 1 400px;
       overflow: hidden;
       img {
         width: 100%;

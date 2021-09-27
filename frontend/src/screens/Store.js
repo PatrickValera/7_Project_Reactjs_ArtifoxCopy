@@ -11,7 +11,7 @@ const Store = () => {
     const {storeItems}=useSelector((state)=>state.storeItems)
     useEffect(()=>{
         dispatch(getStoreItems(window.location.pathname))
-    },[dispatch,window.location.pathname])
+    },[dispatch])
 
     return (
         <div className="main-store">

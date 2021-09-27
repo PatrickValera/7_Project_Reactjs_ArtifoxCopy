@@ -6,13 +6,8 @@ const Carousel = ({item}) => {
     const [current,setCurrent]=useState(0)
     const ref=useRef(null)
 
-    const prev = () =>{
-        if(current===0)return
-        else setCurrent(current-1)
-    }
-    const next = () =>{
-    if(current>=1)return
-    else setCurrent(current+1) 
+    const handleClick=(id)=>{
+        setCurrent(id)
     }
 
     useEffect(() => {
@@ -24,15 +19,24 @@ const Carousel = ({item}) => {
         <>
         <div className="carousel-frame">
             <div  className="carousel-slide" ref={ref}>
-               <div className="carousel-item">
+                <div className="carousel-item">
                     <img src={item.images.main} alt="" />
                 </div>
                 <div className="carousel-item">
                     <img src={item.images.sub} alt="" />
                 </div>
             </div>
-            <button className="prev button" onClick={prev}>{`<`}</button>
-            <button className="next button"onClick={next}>{`>`}</button>
+            <div className="carousel-nav">
+                <div className="nav-slide">
+                    {/* {item.thumbnails.map(image=>(<img src={} alt="thumbnail" className="thumbnail" />))} */}
+                    <div className="thumbnail-container" onClick={()=>handleClick(0)}>
+                        <img src={item.images.main}  className="thumbnail" alt="" />
+                    </div>
+                    <div className="thumbnail-container" onClick={()=>handleClick(1)}>
+                        <img src={item.images.sub} className="thumbnail" alt="" />
+                    </div>
+                </div>
+            </div>
         </div>
         </>
     )

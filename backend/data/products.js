@@ -32,12 +32,24 @@ const products=[{
     name:"Lift",
     tags:["lift"],
     colors:["Walnut"],
-    price:350,
+    price:850,
     images:{
         main:'/images/lift.jpg',
         sub:'/images/liftsub.jpg'
     },
-    featured:false
+    featured:false,
+    details:{
+        description:"This well-rounded walnut side table fits perfectly in the workspace, lounging space or sleeping space. Dock storage on top for your phone, tablet or accessories all with cables managed below. Drawer storage for books, tech or everyday objects. Made in the USA.",
+        features:["Built in dock for modular accessories and phones","Metal grid for attaching cables","Hidden cable management","Shelf for laptops","Deep drawer that can be used for file cabinet or everyday storage"],
+        specification:{
+            dimension:`50"`,
+            weight:"50 lbs",
+            materials:["solid walnut","powder-coated steel"]
+        }
+    },
+    options:[
+        {cabinet:["Bone","Walnut"]}
+    ]
 },{
     name:"Magazine Holder",
     tags:["desk"],
@@ -85,6 +97,23 @@ const products=[{
             weight:"50 lbs",
             materials:["solid walnut","powder-coated steel"]
         }
+    },
+    quality:{
+        image:"/images/deskquality.jpg",
+        qualities:[
+            {   image:"/icons/icon-dock.png",
+                title:"BUILT-IN DOCK",
+                subheading:"A modular system that allows you to attach accessories and create your own set-up."
+            },{
+                image:"/icons/icon-cables.png",
+                title:"CABLE MANAGEMENT",
+                subheading:"Easily manage cords and power strips by attaching them to the cable grid."
+            },{
+                image:"/icons/icon-backpack.png",
+                title:"HOOKS",
+                subheading:"Conveniently placed within reach for bags and headphones."
+            }
+        ]
     }
 
 },{

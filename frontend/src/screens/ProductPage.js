@@ -9,25 +9,36 @@ import Accordions from '../components/Accordions'
 import { addToCart } from '../global/actioncreators/cartItemsActions'
 import { Breadcrumbs } from '@material-ui/core'
 import { Link } from 'react-router-dom'
+
 const ProductPage = ({match}) => {
     const dispatch = useDispatch();
     const {product,loading}=useSelector(state=>state.itemDetails)
     useEffect(()=>{
         dispatch(getItem(match.params.id))
+    console.log(product)
+
     },[dispatch,match])
     
     const clickHandler=(id)=>{
         dispatch(addToCart(id))
     }
-    
+    const handleNavClick=(id)=>{
+        const element=document.getElementById(id)
+        if(element){
+            const links=document.querySelectorAll(".nav-button")
+            links.forEach(x=>{
+                x.classList.remove("active")
+                if(x.textContent.toLowerCase()===id)x.classList.add("active")
+            })
+            const elementPosition=element.getBoundingClientRect().top
+            window.scrollTo({top:elementPosition-80-document.body.getBoundingClientRect().top,behavior:"smooth"})
+        }
+    }
     return (
         <>
-        {!loading?(<>
-                
-                
-
-        <Grid xs={12} container className="product-page">
-        <Grid item  xs={12} md={5} lg={4} xl={3}className="product-info">
+        {!loading?(<div className="product-page">
+        <Grid xs={12} container className="main-details">
+        <Grid item  sm={12} md={4} lg={4} xl={3}className="product-info">
             <div className="sticky-container">
                 <Breadcrumbs aria-label="breadcrumb" className="breadcrumb">
                     <Link color="inherit" to="/" className="crumb-text">
@@ -44,20 +55,61 @@ const ProductPage = ({match}) => {
                     <span>43 reviews</span>
                 </Box>
                 <span className="price">{product.price.toLocaleString()}</span>
+                {product.options&&
+                    product.options.map(x=>(
+                    <>  
+                        <label htmlFor="">{x.toString}</label>
+                        <select name="" id="">
+                            <option value="test">fff</option>
+                        </select>
+                    </>))
+                }
                 <button className="checkout-button" onClick={()=>clickHandler(product._id)}>Add to cart</button>
-                <Typography variant="subtitle2" className="affirm-link">Starting at $118/mo with <b>affirm</b>. <a href="/">Learn more</a></Typography>
+                <Typography variant="subtitle2" className="affirm-link">{`Starting at $${(product.price/12).toFixed(0)}/mo with `}<b>affirm</b>. <a href="/">Learn more</a></Typography>
                 <Typography variant="subtitle2" className="shipping-text"><em>Now Shipping</em></Typography>
                 {product.details&&<Accordions details={product.details}/>}
         </div>
         </Grid>
-        <Grid item xs={12} md={7} lg={8} xl={9} className="gallery">
+        <Grid item sm={12} md={8} lg={8} xl={9} className="gallery">
             <Carousel item={product}/>
         </Grid>
-
-    </Grid>
-    </>):"LOADING"}
-    </>
-    
+        </Grid>
+        <nav className="page-nav">
+            <div className={`nav-button`} onClick={()=>handleNavClick("details")}>Details</div>
+            <div className={`nav-button`} onClick={()=>handleNavClick("quality")}>Quality</div>
+            <div className={`nav-button`} onClick={()=>handleNavClick("collection")}>Collection</div>
+        </nav>
+        <div className="details" id="details">
+            <video src="/videos/White_Oak_Table.mp4" autoPlay muted loop></video>
+        </div>
+        {product.quality&&
+            <div className="quality" id="quality">
+                <div className="quality-container">
+                    <div className="quality-list">
+                        {product.quality.qualities.map(x=>(
+                        <div className="wrapper">
+                            <div className="image-container">
+                                <img src={x.image} alt="" />
+                            </div>
+                            <div className="text-container">
+                                <h3 className="title">{x.title}</h3>
+                                <p className="subheading">{x.subheading}</p>
+                            </div>
+                        </div>
+                    ))}         
+                    </div>
+                    
+                </div>
+                <div className="quality-image">
+                    <img src={product.quality.image} alt="" />
+                </div>
+            </div>
+        }
+        <div className="collection" id="collection">
+            collection
+        </div>
+        </div>):"LOADING"}
+        </>
     )
 }
 

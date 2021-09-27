@@ -11,6 +11,12 @@ const detailsSchema=mongoose.Schema({
 },{
     _id:false
 })
+const qualitySchema=mongoose.Schema({
+    image:String,
+    qualities:Array
+},{
+    _id:false
+})
 const productSchema = mongoose.Schema({
     name:{
         type:String,
@@ -34,7 +40,12 @@ const productSchema = mongoose.Schema({
         required:true,
         default:false
     },
+    options:{
+        type:Array,
+        default:["test"]
+    },
     details:detailsSchema,
+    quality:qualitySchema
 },{
     timestamps:true
 })

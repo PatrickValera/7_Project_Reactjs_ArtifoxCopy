@@ -33,7 +33,11 @@ const ProductPage = ({match}) => {
     }
     return (
         <>
-        {loading?"LOADING":(<div className="product-page">
+        {loading?
+        <div className="spinner-container">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </div>:
+        <div className="product-page">
         <Grid xs={12} container className="main-details">
         <Grid item  sm={12} md={4} lg={4} xl={3}className="product-info">
             <div className="sticky-container">
@@ -53,6 +57,7 @@ const ProductPage = ({match}) => {
                 </Box>
                 <span className="price">{product.price.toLocaleString()}</span>
                 <div className="form-product-variant">
+                {/* test options code below */}
                 {product.options&&
                     product.options.map(x=>(
                     <>  
@@ -110,7 +115,7 @@ const ProductPage = ({match}) => {
         <div className="collection" id="collection">
             collection
         </div>
-        </div>)}
+        </div>}
         </>
     )
 }

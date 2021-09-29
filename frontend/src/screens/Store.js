@@ -8,12 +8,19 @@ import Card from '../components/Card'
 
 const Store = () => {
     const dispatch=useDispatch()
-    const {storeItems}=useSelector((state)=>state.storeItems)
+    const {storeItems,loading}=useSelector((state)=>state.storeItems)
     useEffect(()=>{
+        console.log("FETCHING")
         dispatch(getStoreItems(window.location.pathname))
-    },[dispatch])
-
+        // eslint-disable-next-line
+    },[dispatch,window.location.pathname])
     return (
+        <>
+        {loading?
+        <div className="spinner-container">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+        :
         <div className="main-store">
             <header>
                 <Breadcrumbs aria-label="breadcrumb" className="breadcrumb">
@@ -28,10 +35,12 @@ const Store = () => {
             <Grid container xs={12} spacing={2}>
                 {storeItems.map(item=>(
                     <Grid item key={item._id} lg={3} xs={6} featured={item.featured}>
-                        <Card item={item}/>
+                        <Card item={item} loading={loading}/>
                     </Grid>))}
             </Grid>
-        </div>
+        </div>}
+        </>
+        
     )
 }
 

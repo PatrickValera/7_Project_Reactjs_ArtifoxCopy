@@ -8,7 +8,9 @@ const Navigation = () => {
     console.log("NAV LOADED")
     const [secondaryRoutes,setSecondaryRoutes]=useState([])
     const [navActive,setNavActive]=useState(false)
+    const [navOpen,setNavOPen]=useState(false)
     const secondNavRef=useRef()
+    const navContainer=useRef()
     const cartLength=useSelector(state=>state.cartItems.list).length
     const pages=[{
         title:"Shop All",
@@ -47,10 +49,20 @@ const Navigation = () => {
         setNavActive(false)
         secondNavRef.current.classList.add("hidden")
     }
+    const handleNavClick=()=>{
+        setNavOPen(state=>!state)
+        navContainer.current.classList.toggle("open")
+    }
     return(
         <div className="navigation">
+
         <div className={`overlay ${navActive&&"dark"}`}></div>
         <nav className="navigation-primary">
+                   <span className="open-close-icon" onClick={handleNavClick}>
+                    {navOpen?
+                    <i className="fas fa-times"></i>:
+                    <i className="fas fa-bars"></i>}
+                </span>
             <div className="nav-header">
                 <Link to='/'>
                     <img className="logo" src="/images/logo.png" alt="" />
@@ -63,30 +75,33 @@ const Navigation = () => {
                     </svg>
                     </span>
                 </Link>
-                
+         
+
             </div>
-            <ul className="nav-list-primary">
-                {pages.map((page,index)=>(
-                    <li className="nav-list-item-box" 
-                        onMouseOver={page.secondaryRoutes?(e)=>handleOpen(e,page.secondaryRoutes):(e)=>handleClose(e)} 
-                        onMouseLeave={handleClose} key={index}>
-                        <Link className="nav-list-item" to={page.link} >
-                            <span className="nav-list-item-text">{page.title}</span>
-                            {page.secondaryRoutes&&<i className="fas fa-chevron-right"></i>}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-            <ul className="nav-list-secondary light">
-                {secondaryPages.map((page,index)=>(
-                    <li className="nav-list-item-box" key={index}>
-                        <Link className="nav-list-item" to={page.link} >
-                            <span className="nav-list-item-text">{page.title}</span>
-                            {page.icon&&<i className="fas fa-chevron-right"></i>}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            <div className="nav-list-container" ref={navContainer}>
+                <ul className="nav-list-primary">
+                    {pages.map((page,index)=>(
+                        <li className="nav-list-item-box" 
+                            onMouseOver={page.secondaryRoutes?(e)=>handleOpen(e,page.secondaryRoutes):(e)=>handleClose(e)} 
+                            onMouseLeave={handleClose} key={index}>
+                            <Link className="nav-list-item" to={page.link} >
+                                <span className="nav-list-item-text">{page.title}</span>
+                                {page.secondaryRoutes&&<i className="fas fa-chevron-right"></i>}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <ul className="nav-list-secondary light">
+                    {secondaryPages.map((page,index)=>(
+                        <li className="nav-list-item-box" key={index}>
+                            <Link className="nav-list-item" to={page.link} >
+                                <span className="nav-list-item-text">{page.title}</span>
+                                {page.icon&&<i className="fas fa-chevron-right"></i>}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </nav>
         <nav className="navigation-secondary hidden" ref={secondNavRef}
             onMouseOver={(e,secondaryRoutes)=>handleOpen(secondaryRoutes)} 

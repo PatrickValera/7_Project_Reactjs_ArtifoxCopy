@@ -1,4 +1,15 @@
 @import "../variables";
+.spinner-container {
+  width: 100%;
+  height: 100vh;
+  // background-color: red;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  .fas {
+    font-size: 5rem;
+  }
+}
 .product-page {
   width: 100%;
   .main-details {

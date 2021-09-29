@@ -1,6 +1,6 @@
 import React from 'react'
-import { useEffect,useState } from 'react'
-import { useSelector,useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import CartItem from '../components/CartItem'
 // import { bindActionCreators } from 'redux'
 // import { actionCreators } from '../global/actioncreators/index'

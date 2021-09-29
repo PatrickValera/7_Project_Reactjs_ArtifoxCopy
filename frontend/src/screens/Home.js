@@ -1,5 +1,5 @@
 import HomeCarousel1 from '../components/HomeCarousel1'
-import Card from '../components/Card'
+// import Card from '../components/Card'
 
 const cards=[{
     title:"Modular Desk",

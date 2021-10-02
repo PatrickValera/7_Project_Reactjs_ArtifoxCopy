@@ -9,12 +9,14 @@ import { addToCart } from '../global/actioncreators/cartItemsActions'
 import { Breadcrumbs } from '@material-ui/core'
 import { useSelector,useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { forwardRef } from 'react'
 
 const ProductPage = ({match}) => {
     const dispatch = useDispatch();
     const {product,loading}=useSelector(state=>state.itemDetails)
     useEffect(()=>{
         dispatch(getItem(match.params.id))
+        window.scrollTo({top:0})
     },[dispatch,match])
     const clickHandler=(id)=>{
         dispatch(addToCart(id))
@@ -70,7 +72,6 @@ const ProductPage = ({match}) => {
                     </>))
                 }   
                 </div>
-                
                 <button className="checkout-button" onClick={()=>clickHandler(product._id)}>Add to cart</button>
                 <Typography variant="subtitle2" className="affirm-link">{`Starting at $${(product.price/12).toFixed(0)}/mo with `}<b>affirm</b>. <a href="/">Learn more</a></Typography>
                 <Typography variant="subtitle2" className="shipping-text"><em>Now Shipping</em></Typography>
@@ -87,6 +88,7 @@ const ProductPage = ({match}) => {
             <div className={`nav-button`} onClick={()=>handleNavClick("collection")}>Collection</div>
         </nav>
         <div className="details" id="details">
+            {/* <video src={product.video&&product.video} autoPlay muted loop></video> */}
             <video src={product.video?product.video:"/videos/White_Oak_Table.mp4"} autoPlay muted loop></video>
         </div>
         {product.quality&&
@@ -113,7 +115,6 @@ const ProductPage = ({match}) => {
             </div>
         }
         <div className="collection" id="collection">
-            collection
         </div>
         </div>}
         </>

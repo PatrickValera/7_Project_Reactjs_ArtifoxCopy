@@ -65,11 +65,12 @@
       padding: 1rem 2rem;
       border-radius: 0;
       color: inherit;
+      background-color: rgb(221, 221, 221);
       border: none;
       @include main-font;
       font-size: 0.8rem;
       &:hover {
-        background-color: #ddd;
+        background-color: rgb(194, 194, 194);
       }
     }
   }

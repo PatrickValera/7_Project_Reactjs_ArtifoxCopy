@@ -1,6 +1,6 @@
 import HomeCarousel1 from '../components/HomeCarousel1'
 // import Card from '../components/Card'
-
+import { useEffect } from 'react'
 const cards=[{
     title:"Modular Desk",
     content:"Create your dream workspace with our customizable desk system",
@@ -14,7 +14,12 @@ const cards=[{
     content:"Finally a bike rack that is bot hfunctional and beautiful",
     image:"/images/rack.jpg"
 },]
+
 const Home = () =>{
+    useEffect(() => {
+        window.scrollTo({top:0})
+   
+})
     return(
         <div className="home">
             <HomeCarousel1/>

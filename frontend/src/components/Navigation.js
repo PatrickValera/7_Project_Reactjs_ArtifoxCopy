@@ -5,7 +5,6 @@ import { useRef } from "react"
 import { capitalizeFirstLetter } from "../utils"
 
 const Navigation = () => {
-    console.log("NAV LOADED")
     const [secondaryRoutes,setSecondaryRoutes]=useState([])
     const [navActive,setNavActive]=useState(false)
     const [navOpen,setNavOPen]=useState(false)

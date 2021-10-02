@@ -10,7 +10,7 @@ const Carousel = ({item}) => {
     useEffect(() => {
         ref.current.style.transition='all 0.9s cubic-bezier(.06,.42,.3,.86)'
         ref.current.style.transform=`translateX(-${current}00%)`
-        let timeout=setTimeout(()=>{setCurrent((x)=>x!==3?x+1:0)}, 5000);
+        let timeout=setTimeout(()=>{setCurrent((x)=>x!==3?x+1:0)}, 2000);
         return()=>clearTimeout(timeout)
     }, [current])
 
@@ -19,9 +19,9 @@ const Carousel = ({item}) => {
         <div className="home-carousel1-frame">
             <div  className="home-carousel1-slide" ref={ref}>
                 <div className={`home-carousel1-item ${current===0&&"active"}`}>
-                    <img src="/images/home/home-walnut-table-1.png" alt="" />
+                    <img src="/images/home/home-black.jpg" alt="" />
                     <div className="slide-card top">
-                        <h3 className="slide-title">The Perfect Desk</h3>
+                        <h3 className="slide-title">Back in Black</h3>
                         <p className="slide-subheading">Modular,Minimal and Built to Last</p>
                         <button className="slide-button">Shop Now</button>
                     </div>
@@ -31,7 +31,7 @@ const Carousel = ({item}) => {
                     <div className="slide-card top dark">
                         <h3 className="slide-title">The Perfect Desk</h3>
                         <p className="slide-subheading">Modular,Minimal and Built to Last</p>
-                        <button className="slide-button">Shop Now</button>
+                        <button className="slide-button">Create Your Workspace</button>
                     </div>
                 </div>
                 <div className={`home-carousel1-item ${current===2&&"active"}`}>

@@ -10,7 +10,7 @@ const Store = () => {
     const dispatch=useDispatch()
     const {storeItems,loading}=useSelector((state)=>state.storeItems)
     useEffect(()=>{
-        console.log("FETCHING")
+        console.log(storeItems)
         dispatch(getStoreItems(window.location.pathname))
         // eslint-disable-next-line
     },[dispatch,window.location.pathname])

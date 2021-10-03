@@ -8,6 +8,7 @@ import Navigation from './components/Navigation'
 import Container from './components/Container'
 import ProductPage from './screens/ProductPage'
 import Register from './screens/Register';
+import Login from './screens/Login';
 // import { Container } from '@material-ui/core';
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/cart' component={Cart}/>
         <Route path='/product/:id' component={ProductPage}/>
         <Route path='/register' component={Register}/>
+        <Route path='/login' component={Login}/>
         <Footer/>
       </Container>
     </Router>

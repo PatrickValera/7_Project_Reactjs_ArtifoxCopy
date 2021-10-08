@@ -3,22 +3,20 @@
     display: flex;
     justify-content: space-around;
     padding: 100px 5%;
+    flex-wrap: wrap;
   }
   .card {
-    padding: 0 5%;
-    flex: 1 0 200px;
+    padding: 0 20px;
+    margin: 20px 0;
+    flex: 1 1 170px;
     .image-container {
       //   background-color: red;
-      min-height: 150px;
-      max-height: 150px;
+      // min-width: 200px;
       margin-bottom: 2rem;
       overflow: hidden;
       figure {
-        padding-top: 100%;
+        padding-top: 67%;
         position: relative;
-        display: flex;
-        // align-items: center;
-        vertical-align: middle;
         img {
           position: absolute;
           top: 0;
@@ -39,6 +37,11 @@
         font-size: 0.8rem;
         line-height: 1.8;
       }
+    }
+  }
+  @media screen and (max-width: $mobile+200) {
+    .card {
+      flex: 0 0 100%;
     }
   }
 }

@@ -9,7 +9,7 @@ import { addToCart } from '../global/actioncreators/cartItemsActions'
 import { Breadcrumbs } from '@material-ui/core'
 import { useSelector,useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { forwardRef } from 'react'
+// import { forwardRef } from 'react'
 
 const ProductPage = ({match}) => {
     const dispatch = useDispatch();
@@ -88,8 +88,7 @@ const ProductPage = ({match}) => {
             <div className={`nav-button`} onClick={()=>handleNavClick("collection")}>Collection</div>
         </nav>
         <div className="details" id="details">
-            {/* <video src={product.video&&product.video} autoPlay muted loop></video> */}
-            <video src={product.video?product.video:"/videos/White_Oak_Table.mp4"} autoPlay muted loop></video>
+            <video src={product.video&&product.video} autoPlay muted loop></video>
         </div>
         {product.quality&&
             <div className="quality" id="quality">

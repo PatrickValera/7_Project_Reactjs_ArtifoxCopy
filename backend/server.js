@@ -3,14 +3,15 @@ import connectDB from './config/dbconfig.js'
 import dotenv from 'dotenv'
 import productRoutes from './routes/productRoutes.js'
 import path from 'path'
+
 dotenv.config()
 connectDB()
 const app=express();
 
-
 app.use('/api/products',productRoutes)
 
 const __dirname=path.resolve()
+
 if(process.env.NODE_ENV==='production'){
     app.use(express.static(path.join(__dirname,'/frontend/build')))
 

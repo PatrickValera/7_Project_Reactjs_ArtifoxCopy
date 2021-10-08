@@ -110,14 +110,11 @@
   @media screen and (max-width: $mobile) {
     height: 70px;
     width: 100%;
-    // height: 200px;
     .navigation-primary {
       position: fixed;
       width: 100%;
       z-index: 1000;
       height: unset;
-      // height: 70px;
-      // transform: translateX(80%);
       .open-close-icon {
         display: block;
         position: absolute;

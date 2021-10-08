@@ -49,6 +49,7 @@
         .thumbnail {
           width: 100%;
           opacity: 60%;
+          visibility: visible;
           border: 1px solid rgba(#999, 0.3);
           cursor: pointer;
           &:hover {

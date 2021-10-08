@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRef } from "react"
 import { capitalizeFirstLetter } from "../utils"
 
@@ -50,14 +50,14 @@ const Navigation = () => {
     }
     const handleNavClick=()=>{
         setNavOPen(state=>!state)
-        navContainer.current.classList.toggle("open")
+        if(window.innerWidth<800)navContainer.current.classList.toggle("open")
     }
     return(
         <div className="navigation">
 
-        <div className={`overlay ${navActive&&"dark"}`}></div>
+        <div className={`overlay ${navActive&&navOpen&&"dark"}`}></div>
         <nav className="navigation-primary">
-                   <span className="open-close-icon" onClick={handleNavClick}>
+                <span className="open-close-icon" onClick={handleNavClick}>
                     {navOpen?
                     <i className="fas fa-times"></i>:
                     <i className="fas fa-bars"></i>}
@@ -74,15 +74,15 @@ const Navigation = () => {
                     </svg>
                     </span>
                 </Link>
-         
-
             </div>
             <div className="nav-list-container" ref={navContainer}>
                 <ul className="nav-list-primary">
                     {pages.map((page,index)=>(
                         <li className="nav-list-item-box" 
                             onMouseOver={page.secondaryRoutes?(e)=>handleOpen(e,page.secondaryRoutes):(e)=>handleClose(e)} 
-                            onMouseLeave={handleClose} key={index}>
+                            onMouseLeave={handleClose} key={index}
+                            onClick={window.innerWidth<800&&handleNavClick}
+                            >
                             <Link className="nav-list-item" to={page.link} >
                                 <span className="nav-list-item-text">{page.title}</span>
                                 {page.secondaryRoutes&&<i className="fas fa-chevron-right"></i>}

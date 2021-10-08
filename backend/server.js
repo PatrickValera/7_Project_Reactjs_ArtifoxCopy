@@ -23,4 +23,4 @@ if(process.env.NODE_ENV==='production'){
     res.send("api")
 })
 }
-app.listen(5001,console.log(`SERVER IS RUNNING ON PORT 5000`.green.underline))
+app.listen(process.env.PORT,console.log(`SERVER IS RUNNING ON PORT 5000`.green.underline))

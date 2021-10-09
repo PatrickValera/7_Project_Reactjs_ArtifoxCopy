@@ -7,6 +7,9 @@
 	position: relative;
 	.home-carousel1-slide {
 		display: flex;
+		.active {
+			filter: brightness(100%);
+		}
 	}
 	.home-carousel1-item {
 		width: 100%;
@@ -20,8 +23,8 @@
 		position: relative;
 		.slide-card {
 			position: absolute;
-			bottom: 5rem;
-			left: 5rem;
+			bottom: 100px;
+			left: 100px;
 			color: #fff;
 			.slide-title {
 				font-size: 2rem;
@@ -30,13 +33,13 @@
 			.slide-subheading {
 				font-size: 1rem;
 				color: inherit;
-				padding: 0.5rem 0 4rem 0;
+				padding: 0.5rem 0 1rem 0;
 			}
 			.slide-button {
-				padding: 1rem 2rem;
+				padding: 15px 20px;
 				border-radius: 0;
 				color: inherit;
-				background-color: rgb(221, 221, 221);
+				background-color: rgb(252, 252, 252);
 				border: none;
 				@include main-font;
 				font-size: 0.8rem;
@@ -45,18 +48,45 @@
 				}
 			}
 		}
+		.top {
+			bottom: unset;
+			top: 100px;
+		}
+		.dark {
+			color: #222 !important;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
 		@media screen and (max-width: $mobile+200) {
-			height: 60vh;
+			height: 35vh;
+			max-height: 400px;
+			transition: 1s linear;
+			-webkit-transition: transform 1s;
+			-webkit-transition: -webkit-transform 1s;
+			.slide-card {
+				bottom: 40px;
+				left: 40px;
+				.slide-title {
+					font-size: 1.7rem;
+				}
+				.slide-subheading {
+					font-size: 0.8rem;
+				}
+			}
+			img {
+				object-position: left;
+			}
+			.top {
+				bottom: unset;
+				top: 40px;
+			}
 		}
 	}
-	.active {
-		filter: brightness(100%);
-	}
-	.home-carousel1-item img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+
 	.dots {
 		display: flex;
 		position: absolute;
@@ -77,13 +107,5 @@
 		.active {
 			background-color: #000;
 		}
-	}
-
-	.top {
-		bottom: unset;
-		top: 5rem;
-	}
-	.dark {
-		color: #222;
 	}
 }

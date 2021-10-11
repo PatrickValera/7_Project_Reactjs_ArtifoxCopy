@@ -13,7 +13,6 @@ const Cart = () => {
     }, [])
 
     return (
-        <>
         <div className="cart">
             <h3>Shopping Cart</h3>
             <span>{`${list.length} product${list.length>1?'s':''} in your cart`}</span>
@@ -27,8 +26,6 @@ const Cart = () => {
         :
         "EMPTY CART"}
         </div>
-        </>
-
     )
 }
 

@@ -16,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 const Accordions=({details})=> {
   const classes = useStyles();
   useEffect(() => {
@@ -30,7 +28,6 @@ const Accordions=({details})=> {
       {/* COPIED FROM MUI */}
       <Accordion>
         <AccordionSummary
-        
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -56,9 +53,8 @@ const Accordions=({details})=> {
           </Typography>
         </AccordionDetails>
       </Accordion>
-       <Accordion>
+      <Accordion>
         <AccordionSummary
-         
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
@@ -73,7 +69,6 @@ const Accordions=({details})=> {
       </Accordion> 
       <Accordion>
         <AccordionSummary
-         
           aria-controls="panel2a-content"
           id="panel2a-header"
         >

@@ -1,5 +1,7 @@
 import { createStore, applyMiddleware} from "redux";
 import { combineReducers } from "redux";
+import {composeWithDevTools} from 'redux-devtools-extension'
+
 import cartItemsReducer from './reducers/cartItemsReducer'
 import storeItemsReducer from './reducers/storeItemsReducer'
 import itemDetailsReducer from './reducers/itemDetailsReducer'
@@ -15,6 +17,6 @@ const cartItemsFromStorage = localStorage.getItem('cartList')?JSON.parse(localSt
 const initialState={
     cartItems:{list:cartItemsFromStorage}
 }
-const store = createStore(reducers,initialState,applyMiddleware(thunk))
+const store = createStore(reducers,initialState,composeWithDevTools(applyMiddleware(thunk)))
 
 export default store

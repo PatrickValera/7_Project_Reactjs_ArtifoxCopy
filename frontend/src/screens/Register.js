@@ -20,9 +20,7 @@ const Register = () => {
                     <label htmlFor="password"></label>
                     <input type="password" placeholder="Password"/>
                 </div>
-
-                    <button>Create</button>
-
+                <button>Register</button>
             </form>
         </div>
         </div>

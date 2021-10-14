@@ -20,8 +20,8 @@ function App() {
         <Route path='/products' component={Store}/>
         <Route path='/cart' component={Cart}/>
         <Route path='/product/:id' component={ProductPage}/>
-        <Route path='/register' component={Register}/>
-        <Route path='/login' component={Login}/>
+        <Route path='/user/register' component={Register}/>
+        <Route path='/user/login' component={Login}/>
         <Footer/>
       </Container>
     </Router>

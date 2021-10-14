@@ -19,7 +19,6 @@ const Login = () =>{
                 <i className="fas fa-exclamation-triangle"></i>
             <span className="message">ERROR</span>
             </div>}
-      
             <input className="input" type="email" placeholder="email" value={email} onChange={handleChange} />
             <input className="input" type="password" placeholder="password" value={password} onChange={handleChange}/>
             <input className="input button" type="submit" value="login" />

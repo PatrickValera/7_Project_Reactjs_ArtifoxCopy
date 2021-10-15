@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 
-const CartItem = ({item}) => {
+const CartItem = ({item,deleteItem}) => {
     const [quantity,setQuantity]=useState(item.qty)
     
     const handleChange=(e)=>{
         setQuantity(e.target.value)
     }
+
 
     return (
         <div className="cart-item">
@@ -21,7 +22,7 @@ const CartItem = ({item}) => {
             </div>
             <div className="qty-input">
                 <input type="number" className="qty-input" value={quantity} onChange={(e)=>handleChange(e)}/>
-                <span>x</span>
+                <i className="fas fa-times" onClick={()=>deleteItem(item._id)}></i>
             </div>
         </div>
     )

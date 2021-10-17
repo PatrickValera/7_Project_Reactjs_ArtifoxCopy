@@ -31,7 +31,7 @@ const Footer = () => {
                    <li ><Link className="link">Returns</Link></li>
                    <li ><Link className="link">Terms of Use</Link></li>
                    <li ><Link className="link">Blog</Link></li>
-                   <li ><Link className="link">COVDI-19</Link></li>
+                   <li ><Link className="link">COVID-19</Link></li>
                </ul>
            </div>
         </footer>

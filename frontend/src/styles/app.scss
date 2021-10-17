@@ -7,48 +7,51 @@
 @import "pages/registration", "pages/login";
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
 }
 
 .main-container {
-  margin-left: $navigation-width;
-  @media screen and (max-width: $mobile) {
-    margin-left: 0;
-  }
+	margin-left: $navigation-width;
+	@media screen and (max-width: $mobile) {
+		margin-left: 0;
+	}
 }
 .main-store {
-  padding: 2rem;
-  header {
-    padding: 1rem 0 0 0.5rem;
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: 0.05rem;
-      padding: 1rem 0 2rem 0;
-    }
-    span {
-      font-size: 0.9rem;
-      color: rgb(75, 75, 75);
-    }
-  }
+	padding: 2rem;
+	header {
+		padding: 1rem 0 0 0.5rem;
+		h2 {
+			font-size: 1.8rem;
+			font-weight: 600;
+			letter-spacing: 0.05rem;
+			padding: 1rem 0 2rem 0;
+		}
+		span {
+			font-size: 0.9rem;
+			color: rgb(75, 75, 75);
+		}
+	}
 }
 .breadcrumb {
-  padding-bottom: 2rem;
-  .crumb-text {
-    letter-spacing: 0.02rem;
-    font-size: 0.8rem;
-    color: rgb(0, 0, 0);
-  }
-  .active {
-    color: rgb(168, 168, 168);
-  }
-  .MuiBreadcrumbs-separator {
-    font-size: 0.8rem;
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-  }
+	padding-bottom: 2rem;
+	.crumb-text {
+		letter-spacing: 0.02rem;
+		font-size: 0.8rem;
+		color: rgb(0, 0, 0);
+	}
+	.active {
+		color: rgb(168, 168, 168);
+	}
+	.MuiBreadcrumbs-separator {
+		font-size: 0.8rem;
+		margin-left: 0.3rem;
+		margin-right: 0.3rem;
+	}
+}
+.clickable {
+	cursor: pointer;
 }

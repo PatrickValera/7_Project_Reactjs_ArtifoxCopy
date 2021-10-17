@@ -22,7 +22,7 @@ const CartItem = ({item,deleteItem}) => {
             </div>
             <div className="qty-input">
                 <input type="number" className="qty-input" value={quantity} onChange={(e)=>handleChange(e)}/>
-                <i className="fas fa-times" onClick={()=>deleteItem(item._id)}></i>
+                <i className="fas fa-times clickable" onClick={()=>deleteItem(item._id)}></i>
             </div>
         </div>
     )

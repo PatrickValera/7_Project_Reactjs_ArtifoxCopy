@@ -72,7 +72,7 @@ const ProductPage = ({match}) => {
                     </>))
                 }   
                 </div>
-                <button className="checkout-button" onClick={()=>clickHandler(product._id)}>Add to cart</button>
+                <button className="clickable checkout-button" onClick={()=>clickHandler(product._id)}>Add to cart</button>
                 <Typography variant="subtitle2" className="affirm-link">{`Starting at $${(product.price/12).toFixed(0)}/mo with `}<b>affirm</b>. <a href="/">Learn more</a></Typography>
                 <Typography variant="subtitle2" className="shipping-text"><em>Now Shipping</em></Typography>
                 {product.details&&<Accordions details={product.details}/>}

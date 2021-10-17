@@ -30,10 +30,8 @@ const Cart = () => {
                     ))}
                     <button>Check Out</button>
                 </div>
-                <h4>TOTAL</h4>
-                <span>
-                ${list.reduce((itemTotal,item)=>itemTotal+item.price,0)}
-            </span>
+                <span class="p-3">TOTAL:</span>
+                <span>${list.reduce((itemTotal,item)=>itemTotal+item.price,0)}</span>
             </>:
             "EMPTY CART"
             }

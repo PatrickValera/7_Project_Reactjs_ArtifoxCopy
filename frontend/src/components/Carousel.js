@@ -29,10 +29,10 @@ const Carousel = ({item}) => {
             <div className="carousel-nav">
                 <div className="nav-slide">
                     {/* {item.thumbnails.map(image=>(<img src={} alt="thumbnail" className="thumbnail" />))} */}
-                    <div className="thumbnail-container" onClick={()=>handleClick(0)}>
+                    <div className="clickable thumbnail-container" onClick={()=>handleClick(0)}>
                         <img src={item.images.main}  className="thumbnail" alt="" />
                     </div>
-                    <div className="thumbnail-container" onClick={()=>handleClick(1)}>
+                    <div className="clickable thumbnail-container" onClick={()=>handleClick(1)}>
                         <img src={item.images.sub} className="thumbnail" alt="" />
                     </div>
                 </div>

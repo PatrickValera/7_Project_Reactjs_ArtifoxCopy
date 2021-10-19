@@ -12,7 +12,7 @@ const userInfoReducer=(state={},action)=>{
             return {loading:false,error:action.payload}
         }
         case USER_LOGOUT:{
-            return {}
+            return {loading:false,userInfo:null}
         }
         default:
             return state

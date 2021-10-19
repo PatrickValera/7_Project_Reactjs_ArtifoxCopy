@@ -1,16 +1,25 @@
-import { useState,useReducer } from "react"
-
-const Login = () =>{
+import { useState,useEffect } from "react"
+import {userLogin} from '../global/actioncreators/userInfoActions'
+import {useDispatch, useSelector} from 'react-redux'
+const Login = ({history}) =>{
+    const [email,setEmail]=useState("")
+    const [password,setPassword]=useState("")
+    const dispatch=useDispatch()
+    const {userInfo}=useSelector(state=>state.userInfo)
     const handleSubmit=(e)=>{
         e.preventDefault()
         console.log("SUBMIT")
+        dispatch(userLogin(email,password))
     }
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
     const handleChange=(e)=>{
         if(e.target.type==="email")setEmail(e.target.value)
         else setPassword(e.target.value)
     }
+    useEffect(()=>{
+        if(userInfo){
+            history.push('/user/profile')
+        }
+    },[userInfo])
     return(
         <div className="login-form">
             <form action="" onSubmit={handleSubmit} className="form">

@@ -16,19 +16,25 @@
 		// margin-top: 5rem;
 		padding-top: 2rem;
 	}
-	button {
-		border: none;
-		float: right;
-		padding: 1rem 4rem;
-		background-color: black;
-		color: white;
-		font-weight: 600;
-		letter-spacing: 0.01rem;
-		font-size: 0.9rem;
-		transition: 0.2s linear;
-		&:hover {
-			color: black;
-			background-color: rgb(219, 219, 219);
+	.action-group {
+		text-align: -webkit-right;
+		.button {
+			margin: 10px 0;
+			width: 20%;
+			min-width: 220px;
+			display: block;
+			border: none;
+			padding: 1rem 4rem;
+			background-color: black;
+			color: white;
+			font-weight: 600;
+			letter-spacing: 0.01rem;
+			font-size: 0.9rem;
+			transition: 0.2s linear;
+			&:hover {
+				color: black;
+				background-color: rgb(219, 219, 219);
+			}
 		}
 	}
 }

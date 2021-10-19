@@ -3,13 +3,14 @@ import { useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import CartItem from '../components/CartItem'
 import { removeFromCart } from '../global/actioncreators/cartItemsActions'
+import {Link} from 'react-router-dom'
 // import { bindActionCreators } from 'redux'
 // import { actionCreators } from '../global/actioncreators/index'
 
 const Cart = () => {
     const dispatch= useDispatch()
     const {list}=useSelector(state=>state.cartItems)
-
+    const {userInfo}=useSelector(state=>state.userInfo)
     const handleDeleteItem=(id)=>{
         dispatch(removeFromCart(id))
     }
@@ -28,10 +29,16 @@ const Cart = () => {
                     {list.map((item)=>(
                     <CartItem item={item} key={item.id} deleteItem={handleDeleteItem}/>
                     ))}
-                    <button>Check Out</button>
                 </div>
                 <span class="p-3">TOTAL:</span>
                 <span>${list.reduce((itemTotal,item)=>itemTotal+item.price,0)}</span>
+                <div className="action-group">
+                    {!userInfo&&<Link to='/user/login' >
+                    <button className="button">Login</button></Link>
+                    }
+                    <Link to='/user/login' ><button className="button">Check Out</button></Link>
+                </div>
+
             </>:
             "EMPTY CART"
             }

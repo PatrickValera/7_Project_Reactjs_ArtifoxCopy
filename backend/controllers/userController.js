@@ -29,5 +29,18 @@ const authenUser=async(req,res)=>{
         res.send("WRONG EMAIL OR PASSWORD")
     }
 }
+const userProfile=async(req,res)=>{
+    const user=await User.findById(req.user._id)
+    if(user){
+        res.json({
+            id:user._id,
+            name:user.name,
+            email: user.email,
+        })
+    }else{
+        res.status(404)
+        throw new Error("USER NOT FOUND")
+    }
+}
 
-export {registerUser,authenUser}
+export {registerUser,authenUser,userProfile}

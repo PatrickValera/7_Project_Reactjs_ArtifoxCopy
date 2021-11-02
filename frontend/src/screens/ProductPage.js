@@ -19,7 +19,7 @@ const ProductPage = ({match}) => {
         window.scrollTo({top:0})
     },[dispatch,match])
     const clickHandler=(id)=>{
-        dispatch(addToCart(id))
+        dispatch(addToCart(id,1))
     }
     const handleNavClick=(id)=>{
         const element=document.getElementById(id)

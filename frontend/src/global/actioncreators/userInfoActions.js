@@ -12,9 +12,11 @@ export const userLogin =(email,password)=>async(dispatch)=>{
             payload:data
         })
         localStorage.setItem('userInfo',JSON.stringify(data))
-    }catch(err){
+    }catch(error){
         dispatch({
-            type:USER_LOGIN_FAIL})
+            type:USER_LOGIN_FAIL,
+            payload:error.response && error.response.data.message ?error.response.data.message: error.message
+        })
     }
 }
 export const userLogout=()=>(dispatch)=>{

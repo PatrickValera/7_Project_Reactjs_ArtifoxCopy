@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import CartItem from '../components/CartItem'
 import { removeFromCart } from '../global/actioncreators/cartItemsActions'
@@ -10,15 +9,12 @@ import {Link} from 'react-router-dom'
 const Cart = () => {
     const dispatch= useDispatch()
     const {list}=useSelector(state=>state.cartItems)
-    const {userInfo}=useSelector(state=>state.userInfo)
+    const {userInfo}=useSelector(state=>state.userLogin)
     const handleDeleteItem=(id)=>{
         dispatch(removeFromCart(id))
     }
-    useEffect(() => {
-        {list.map((x)=>{total+=x})}
+ 
 
-    }, [list])
-    let total=0
     return (
         <div className="cart">
             <h3>Shopping Cart</h3>

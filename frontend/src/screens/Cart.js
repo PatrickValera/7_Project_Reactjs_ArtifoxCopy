@@ -32,7 +32,7 @@ const Cart = () => {
                     {!userInfo&&<Link to='/user/login' >
                     <button className="button">Login</button></Link>
                     }
-                    <Link to='/user/login' ><button className="button">Check Out</button></Link>
+                    <Link to='/checkout' ><button className="button">Check Out</button></Link>
                 </div>
 
             </>:

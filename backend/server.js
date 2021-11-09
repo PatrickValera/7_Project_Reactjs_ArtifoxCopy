@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import path from 'path'
-import {notFound,errorHandler} from './middleWare/errorMiddleWare.js'
+import {notFound,errorHandler} from './middleware/errorMiddleWare.js'
 
 dotenv.config()
 connectDB()

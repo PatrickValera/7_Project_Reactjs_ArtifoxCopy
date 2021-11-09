@@ -19,4 +19,8 @@ const cartItemsReducer = (state={list:[]},action) =>{
             return state
     }
 }
-export default cartItemsReducer
+const shippingAddressReducer=(state={},action)=>{
+    if(action.payload)return action.payload
+    else return state
+}
+export {cartItemsReducer,shippingAddressReducer}

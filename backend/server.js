@@ -13,9 +13,7 @@ const app=express();
 app.use(express.json())
 app.use('/api/products',productRoutes)
 app.use('/api/user',userRoutes)
-//ERROR HANDLERS
-app.use(errorHandler)
-app.use(notFound)
+
 const __dirname=path.resolve()
 
 if(process.env.NODE_ENV==='production'){
@@ -28,4 +26,7 @@ if(process.env.NODE_ENV==='production'){
     res.send("api")
 })
 }
+//ERROR HANDLERS
+app.use(errorHandler)
+app.use(notFound)
 app.listen(process.env.PORT,console.log(`SERVER IS RUNNING ON PORT ${process.env.PORT}`.green.underline))

@@ -1,5 +1,5 @@
 import './styles/app.scss';
-import { BrowserRouter as Router,Route } from 'react-router-dom';
+import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import Home from './screens/Home'
 import Store from './screens/Store'
 import Cart from './screens/Cart'
@@ -17,19 +17,22 @@ function App() {
   return (
     <>
     <Router>
-      <Navigation/>
-      <Container>
-        <Route path='/' exact component={Home}/>
-        <Route path='/products' component={Store}/>
-        <Route path='/cart' component={Cart}/>
-        <Route path='/product/:id' component={ProductPage}/>
-        <Route path='/user/register' component={Register}/>
-        <Route path='/user/login' component={Login}/>
-        <Route path='/user/profile' component={Profile}/>
-        <Route path='/checkout' component={CheckOut}/>
-
-        <Footer/>
-      </Container>
+      <Switch>
+        <Route path='/checkout' exact component={CheckOut}/>
+        <Route>
+          <Navigation/>
+          <Container>
+            <Route path='/' exact component={Home}/>
+            <Route path='/products' component={Store}/>
+            <Route path='/cart' component={Cart}/>
+            <Route path='/product/:id' component={ProductPage}/>
+            <Route path='/user/register' component={Register}/>
+            <Route path='/user/login' component={Login}/>
+            <Route path='/user/profile' component={Profile}/>
+            <Footer/>
+          </Container>
+        </Route>
+      </Switch>
     </Router>
     </>
   );

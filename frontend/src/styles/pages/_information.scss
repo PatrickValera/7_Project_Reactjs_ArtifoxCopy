@@ -1,0 +1,79 @@
+.information-screen {
+	font-family: "Segoe UI", sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 100vh;
+	.form-container {
+		display: flex;
+		flex: 1 1 60%;
+		justify-content: right;
+		.form {
+			max-width: 900px;
+			padding: 50px 40px;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: flex-start;
+			.logo-container {
+				width: 100%;
+				margin-bottom: 20px;
+				.logo {
+					width: 130px;
+					display: block;
+				}
+			}
+			.header {
+				display: flex;
+				flex-wrap: wrap;
+				width: 100%;
+				align-items: flex-end;
+				margin: 30px 0 5px 0;
+				h4 {
+					flex: 1 1 auto;
+					font-size: 1.3rem;
+					font-weight: 400;
+				}
+				span {
+					flex: 0 0 auto;
+					font-size: 0.9rem;
+				}
+			}
+			.input {
+				border: #d9d9d9 solid 1px;
+				border-radius: 5px;
+				flex: 1 1 100%;
+				height: 45px;
+				padding: 10px;
+				margin: 10px 0;
+			}
+			.half {
+				flex: 1 1 200px;
+			}
+			.input-check {
+				display: flex;
+				color: #868686;
+				.checkbox {
+					cursor: pointer;
+					align-self: flex-start;
+					margin: 3px 8px;
+					color: black;
+					:checked {
+						color: black;
+						background-color: black;
+					}
+				}
+				p {
+					font-size: 0.8rem;
+				}
+			}
+			.button {
+				cursor: pointer;
+				padding: 20px;
+				color: white;
+				border: none;
+				border-radius: 8px;
+				font-size: 0.9rem;
+				background-color: #111111;
+			}
+		}
+	}
+}

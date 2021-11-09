@@ -10,7 +10,9 @@ import ProductPage from './screens/ProductPage'
 import Register from './screens/Register';
 import Login from './screens/Login';
 import Profile from './screens/Profile';
-import CheckOut from './screens/CheckOut';
+import Information from './screens/Information';
+import Shipping from './screens/Shipping';
+
 // import { Container } from '@material-ui/core';
 
 function App() {
@@ -18,7 +20,9 @@ function App() {
     <>
     <Router>
       <Switch>
-        <Route path='/checkout' exact component={CheckOut}/>
+        <Route path='/checkout' exact component={Information}/>
+        <Route path='/shipping' exact component={Shipping}/>
+
         <Route>
           <Navigation/>
           <Container>

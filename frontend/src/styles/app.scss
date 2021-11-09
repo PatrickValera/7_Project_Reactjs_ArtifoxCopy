@@ -1,10 +1,10 @@
 @import "variables";
-@import "components/navigation", "components/footer";
+@import "components/navigation", "components/footer", "components/Sidebar";
 @import "store/card", "store/grid";
 @import "productpage/productpage", "productpage/carousel";
 @import "home/home", "home/carousel1";
 @import "cart/cart", "cart/cartitem";
-@import "pages/registration", "pages/login";
+@import "pages/registration", "pages/login", "pages/information";
 
 * {
 	box-sizing: border-box;
@@ -52,14 +52,20 @@
 		margin-right: 0.3rem;
 	}
 }
+.checkout-breadcrumb {
+	padding-bottom: 0;
+	.crumb-text {
+		font-size: 0.75rem;
+	}
+}
 .clickable {
 	cursor: pointer;
 }
 .horizontal-line {
 	position: relative;
 	text-align: center;
-	padding: 5px 15px;
 	hr {
+		margin: 20px 0;
 		background: rgb(231, 231, 231);
 		height: 1px;
 		border: none;

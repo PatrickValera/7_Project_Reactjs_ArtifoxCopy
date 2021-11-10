@@ -20,7 +20,7 @@ const cartItemsReducer = (state={list:[]},action) =>{
     }
 }
 const shippingAddressReducer=(state={},action)=>{
-    if(action.payload)return action.payload
+    if(action.type==="SAVE_SHIPPING_ADDRESS")return action.payload
     else return state
 }
 export {cartItemsReducer,shippingAddressReducer}

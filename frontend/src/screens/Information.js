@@ -5,7 +5,6 @@ import CheckoutNav from '../components/CheckoutNav'
 import { useState } from 'react'
 import { saveShippingAddress } from '../global/actioncreators/cartItemsActions'
 import { useDispatch,useSelector } from 'react-redux'
-import { Redirect } from 'react-router'
 const Information = ({history}) => {
     const dispatch=useDispatch()
     const shippingAddress=useSelector(state=>state.shippingAddress)
@@ -39,7 +38,7 @@ const Information = ({history}) => {
             <div className="form-container">
                 <form className='form' onSubmit={submitHandler}>
                     <Link to='/' className='logo-container'>
-                    <img className="logo" src="/images/logo.png" alt="" />
+                        A R T I F O X
                     </Link>
                     <CheckoutNav/>
                     <div className='header'>                
@@ -62,6 +61,7 @@ const Information = ({history}) => {
                     <input className='input' type="text" placeholder="City" value={city} onChange={(e)=>setCity(e.target.value)}/>
                     <input className='input' type="text" placeholder="Phone" value={phoneNum} onChange={(e)=>setPhoneNum(e.target.value)}/>
                     <button className='button' type='submit'>Continue to shipping</button>
+                    <Link to='/cart'><button className='button back-button'>Back to Cart</button></Link>
                 </form>
             </div>
             <Sidebar/>

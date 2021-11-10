@@ -9,17 +9,15 @@
 		justify-content: right;
 		.form {
 			max-width: 900px;
-			padding: 50px 40px;
+			padding: 50px;
 			display: flex;
 			flex-wrap: wrap;
 			align-content: flex-start;
 			.logo-container {
 				width: 100%;
 				margin-bottom: 20px;
-				.logo {
-					width: 130px;
-					display: block;
-				}
+				font-size: 1.9rem;
+				color: #333333;
 			}
 			.header {
 				display: flex;
@@ -29,12 +27,15 @@
 				margin: 30px 0 5px 0;
 				h4 {
 					flex: 1 1 auto;
-					font-size: 1.3rem;
+					font-size: 1.2rem;
 					font-weight: 400;
 				}
 				span {
 					flex: 0 0 auto;
 					font-size: 0.9rem;
+				}
+				a {
+					color: black;
 				}
 			}
 			.input {
@@ -73,6 +74,66 @@
 				border-radius: 8px;
 				font-size: 0.9rem;
 				background-color: #111111;
+			}
+			.back-button {
+				background-color: transparent;
+				color: #111;
+			}
+			// Shipping page style
+			.info-container {
+				margin: 30px 0 10px 0;
+				width: 100%;
+				border: 1px solid rgb(231, 231, 231);
+				padding: 15px;
+				border-radius: 5px;
+				.horizontal-line {
+					hr {
+						margin: 15px 0;
+						padding: 0;
+					}
+				}
+				.infobit-container {
+					display: flex;
+					font-size: 0.8rem;
+					align-items: center;
+					.title {
+						flex: 0 0 80px;
+						color: #666;
+					}
+					.content {
+						flex: 1 1 auto;
+						color: #333;
+					}
+					.change-button {
+						flex: 0 0 0;
+						background-color: transparent;
+						color: #111;
+						border: none;
+						cursor: pointer;
+						font-size: 0.72rem;
+					}
+					.radio-input {
+						display: flex;
+						.radio {
+							align-self: center;
+							width: 15px;
+							height: 15px;
+							border-radius: 50%;
+							margin-right: 20px;
+							appearance: none;
+							border: 1px solid black;
+							transition: 0.2s ease-in-out;
+							cursor: pointer;
+						}
+						.radio-checked {
+							border-width: 6px;
+						}
+					}
+					.shipping-option-price {
+						font-size: 0.8rem;
+						font-weight: 600;
+					}
+				}
 			}
 		}
 	}

@@ -1,58 +1,57 @@
 .cart-item {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  .thumbnail {
-    cursor: pointer;
-    width: 80px;
-    height: 90px;
-    background: #ddd;
-    .thumbnail-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-      // max-height: 100%;
-      align-items: center;
-      .product-thumbnail {
-        width: 100%;
-        object-fit: cover;
-        height: 100%;
-      }
-    }
-  }
-  .detail {
-    margin-left: 1.5rem;
-  }
-  .qty-input {
-    position: absolute;
-    right: 1.5rem;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    input {
-      font-weight: 400;
-      border: 1px solid #ddd;
-      margin-right: -0.6rem;
-      font-size: 0.9rem;
-      width: 2rem;
-      height: 2rem;
-      text-align: center;
-      &:checked {
-        border: none;
-      }
-    }
-    /* Chrome, Safari, Edge, Opera */
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    /* Firefox */
-    input[type="number"] {
-      -moz-appearance: textfield;
-    }
-  }
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	.thumbnail {
+		flex: 0 0 content;
+		cursor: pointer;
+		width: 80px;
+		height: 90px;
+		background: #ddd;
+		.thumbnail-container {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+			align-items: center;
+			.product-thumbnail {
+				width: 100%;
+				object-fit: cover;
+				height: 100%;
+			}
+		}
+	}
+	.detail {
+		flex: 1 1 auto;
+		margin-left: 1.5rem;
+	}
+	.qty-input {
+		flex: 0 0 content;
+		align-items: center;
+		font-weight: 600;
+		input {
+			font-weight: 400;
+			border: 1px solid #ddd;
+			margin-right: -0.6rem;
+			font-size: 0.9rem;
+			width: 2rem;
+			height: 2rem;
+			text-align: center;
+		}
+		.fa-times {
+			width: 2rem;
+			text-align: right;
+		}
+		/* Chrome, Safari, Edge, Opera */
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		/* Firefox */
+		input[type="number"] {
+			-moz-appearance: textfield;
+		}
+	}
 }

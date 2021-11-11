@@ -1,9 +1,46 @@
 .sidebar {
 	flex: 1 1 40%;
 	background-color: #fafafa;
-	padding: 50px 2%;
+	padding: 50px 50px;
 	.sidebar-content {
-		max-width: 800px;
+		max-width: 750px;
+		.cart-item {
+			position: relative;
+			.thumbnail {
+				border-radius: 15px !important;
+				border: 1px #ccc solid;
+				cursor: default;
+			}
+			.detail {
+				display: flex;
+				align-items: center;
+				color: rgb(32, 32, 32);
+				font-size: 1.2rem;
+				.name {
+					flex: 1 1 auto;
+					font-weight: 500;
+				}
+				.price {
+					flex: 0 0 auto;
+					font-weight: 500;
+				}
+			}
+			.qty {
+				position: absolute;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				background-color: rgba(75, 75, 75, 0.842);
+				color: white;
+				font-size: 600;
+				width: 26px;
+				height: 26px;
+				border-radius: 13px;
+				top: -10px;
+				left: 80px;
+			}
+		}
+
 		.discount-input {
 			display: flex;
 			.input {
@@ -16,12 +53,13 @@
 			}
 			button {
 				margin: 10px 0 10px 10px;
-				padding: 0 15px;
+				padding: 0 25px;
 				border-radius: 5px;
 				border: none;
-				background-color: #111111;
+				background-color: #c7c7c7;
 				color: white;
 				cursor: pointer;
+				font-weight: 600;
 			}
 		}
 

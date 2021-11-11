@@ -7,7 +7,19 @@ const Sidebar = () => {
             <div className="sidebar-content">
                 <div className="list">
                     <ul>
-                        {list.map(x=>(<li>{x.name}</li>))}
+                        {list.map(item=>(
+                        <div className="cart-item">
+                            <div className="thumbnail">
+                                <figure className="thumbnail-container">
+                                    <img className="product-thumbnail" src={item.images.main} alt="" loading='lazy'/>
+                                </figure>
+                            </div>
+                            <div className="detail">
+                                <h5 className="name">{item.name}{item.colors.length>0&&` - ${item.colors[0]}`}</h5>
+                                <span className="price">${(item.price).toFixed(2)}</span>
+                                <span className="qty">{item.qty}</span>
+                            </div>
+                        </div>))}
                     </ul>
                 </div>
                 <div className="horizontal-line">
@@ -20,7 +32,7 @@ const Sidebar = () => {
                 </div>
                 <div className="fees">
                     <span className='fee-title'>Subtotal</span>
-                    <span className="value">$1,000</span>
+                    <span className="value">${list.reduce((current,total,i)=>total+list[i].price),0}</span>
                 </div>
                 <div className="fees">
                     <span className='fee-title'>Shipping</span>

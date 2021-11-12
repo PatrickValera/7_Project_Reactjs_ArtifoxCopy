@@ -20,3 +20,19 @@ export const orderStatusReducer=(state={success:false},action)=>{
         default: return state
     }
 }
+
+export const paymentDetailReducer=(state={prices:{total:0,shipping:0,taxes:0},method:""},action)=>{
+    switch(action.type){
+        case "SAVE_ORDER_PRICES":{
+            return{
+                ...state,prices:action.payload
+            }
+        }
+        case "SAVE_PAYMENT_METHOD":{
+            return{
+                ...state,method:action.payload
+            }
+        }
+        default: return state
+    }
+}

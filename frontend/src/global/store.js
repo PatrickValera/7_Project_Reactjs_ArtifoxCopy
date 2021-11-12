@@ -6,6 +6,7 @@ import {cartItemsReducer,shippingAddressReducer} from './reducers/cartItemsReduc
 import storeItemsReducer from './reducers/storeItemsReducer'
 import itemDetailsReducer from './reducers/itemDetailsReducer'
 import userLoginReducer from './reducers/userInfoReducer'
+import { orderStatusReducer } from "./reducers/orderReducers";
 import thunk from 'redux-thunk'
 
 const reducers=combineReducers({
@@ -13,7 +14,8 @@ const reducers=combineReducers({
     cartItems:cartItemsReducer,
     storeItems:storeItemsReducer,
     userLogin:userLoginReducer,
-    shippingAddress:shippingAddressReducer
+    shippingAddress:shippingAddressReducer,
+    orderStatus:orderStatusReducer
 })
 const cartItemsFromStorage = localStorage.getItem('cartList')?JSON.parse(localStorage.getItem('cartList')):[]
 const userInfoFromStorage = localStorage.getItem('userInfo')?JSON.parse(localStorage.getItem('userInfo')):null

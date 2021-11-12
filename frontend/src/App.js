@@ -12,7 +12,7 @@ import Login from './screens/Login';
 import Profile from './screens/Profile';
 import Information from './screens/Information';
 import Shipping from './screens/Shipping';
-
+import Payment from './screens/Payment';
 // import { Container } from '@material-ui/core';
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
       <Switch>
         <Route path='/checkout' exact component={Information}/>
         <Route path='/shipping' exact component={Shipping}/>
+        <Route path='/payment' exact component={Payment}/>
 
         <Route>
           <Navigation/>

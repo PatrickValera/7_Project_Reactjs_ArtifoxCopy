@@ -3,6 +3,7 @@ import connectDB from './config/dbconfig.js'
 import dotenv from 'dotenv'
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+import orderRoutes from './routes/orderRoutes.js'
 import path from 'path'
 import {notFound,errorHandler} from './middleware/errorMiddleWare.js'
 
@@ -13,7 +14,7 @@ const app=express();
 app.use(express.json())
 app.use('/api/products',productRoutes)
 app.use('/api/user',userRoutes)
-
+app.use('/api/order',orderRoutes)
 const __dirname=path.resolve()
 
 if(process.env.NODE_ENV==='production'){

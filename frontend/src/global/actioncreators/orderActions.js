@@ -1,4 +1,5 @@
 import {SEND_ORDER_REQUEST,SEND_ORDER_SUCCESS,SEND_ORDER_FAIL, SAVE_PRICES, SAVE_PAYMENT_METHOD} from '../constants/orderConstants'
+import axios from 'axios'
 export const sendOrder=(order)=>async (dispatch)=>{
     try{
         dispatch({
@@ -6,15 +7,15 @@ export const sendOrder=(order)=>async (dispatch)=>{
             order
         })
     //api post request
-    //
+    const {data}=await axios.post('/api/order',order)
         dispatch({
             type:SEND_ORDER_SUCCESS,
-            payload:1234
+            payload:data
         })
-    }catch(err){
+    }catch(error){
         dispatch({
             type:SEND_ORDER_FAIL,
-            payload:{error:"ORDER ERROR"}
+            payload:error.response && error.response.data.message ?error.response.data.message: error.message
         })
     }
 }

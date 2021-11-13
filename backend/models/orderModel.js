@@ -21,7 +21,7 @@ const orderSchema=mongoose.Schema({
       emailUpdate: { type: Boolean, required: true },
       address: { type: String, required: true },
       city: { type: String, required: true },
-      country: { type: String, required: true },
+      // country: { type: String, required: true },
     //   postalCode: { type: String, required: true },
     },
     PaymentDetail:{

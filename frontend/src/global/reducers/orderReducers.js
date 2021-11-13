@@ -17,6 +17,12 @@ export const orderStatusReducer=(state={success:false},action)=>{
                 error:action.payload
             }
         }
+        case "RESET_ORDER":{
+            return{
+                success:false,
+                orderId:null
+            }
+        }
         default: return state
     }
 }

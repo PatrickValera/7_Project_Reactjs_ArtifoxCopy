@@ -18,6 +18,9 @@ export const sendOrder=(order)=>async (dispatch,getState)=>{
             type:SEND_ORDER_SUCCESS,
             payload:data
         })
+        dispatch({
+            type:"RESET_ORDER"
+        })
     }catch(error){
         dispatch({
             type:SEND_ORDER_FAIL,

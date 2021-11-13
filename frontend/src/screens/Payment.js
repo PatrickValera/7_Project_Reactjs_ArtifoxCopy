@@ -2,19 +2,29 @@ import React from 'react'
 import Sidebar from '../components/Sidebar'
 import {Link} from 'react-router-dom'
 import CheckoutNav from '../components/CheckoutNav'
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
+import { useSelector,useDispatch } from 'react-redux'
+import { sendOrder } from '../global/actioncreators/orderActions'
 const Payment = ({history}) => {
+    const dispatch=useDispatch()
     const [cardNumber,setCardNumber]=useState()
     const [cardName,setCardName]=useState()
     const [expDate,setExpDate]=useState()
     const [securityCode,setSecurityCode]=useState()
 
-    const shippingAddress=useSelector(state=>state.shippingAddress)
+    const {cartItems,shippingAddress,paymentDetail,orderStatus:{orderId,success}}=useSelector(state=>state)
     const {address,city}=shippingAddress
     const submitHandler=(e)=>{
         e.preventDefault()
+        dispatch(sendOrder({
+            cart:cartItems.list,
+            shippingAddress,
+            paymentDetail
+        }))
     }
+    useEffect(() => {
+        if(success)history.push(`./order/${orderId}`)
+    }, [success])
     return (
         <div className='information-screen'>
             <div className="form-container">

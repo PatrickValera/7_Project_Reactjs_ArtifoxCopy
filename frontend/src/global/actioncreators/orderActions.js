@@ -1,13 +1,19 @@
 import {SEND_ORDER_REQUEST,SEND_ORDER_SUCCESS,SEND_ORDER_FAIL, SAVE_PRICES, SAVE_PAYMENT_METHOD} from '../constants/orderConstants'
 import axios from 'axios'
-export const sendOrder=(order)=>async (dispatch)=>{
+export const sendOrder=(order)=>async (dispatch,getState)=>{
     try{
         dispatch({
             type:SEND_ORDER_REQUEST,
             order
         })
+        const {userLogin: { userInfo }} = getState()
+        const config = {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`,
+        },
+    }
     //api post request
-    const {data}=await axios.post('/api/order',order)
+    const {data}=await axios.post('/api/order',order,config)
         dispatch({
             type:SEND_ORDER_SUCCESS,
             payload:data

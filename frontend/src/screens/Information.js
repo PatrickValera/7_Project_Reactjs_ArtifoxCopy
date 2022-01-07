@@ -53,7 +53,7 @@ const Information = ({history}) => {
                     <div className="header">
                     <h4>Shipping address</h4>
                     </div>
-                    <input className='input half' type="text" placeholder="First Name" value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
+                    <input className='input half first-name' type="text" placeholder="First Name" value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
                     <input className='input half' type="text" placeholder="Last Name" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
                     <input className='input' type="text" placeholder="Company (optional)" value={company} onChange={(e)=>setCompany(e.target.value)}/>
                     <input className='input' type="text" placeholder="Address" value={address} onChange={(e)=>setAddress(e.target.value)}/>

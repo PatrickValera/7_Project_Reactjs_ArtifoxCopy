@@ -48,6 +48,10 @@ const Payment = ({history}) => {
                             <span className='content'>{`${address}, ${city} CA 92505, United States`}</span>
                             <Link to='/checkout'><button className='change-button'>Change</button></Link>
                         </div>
+                        <div className="horizontal-line">
+                            <span></span>
+                            <hr />
+                        </div>
                         <div className="infobit-container">
                             <span className='title'>Method</span>
                             <span className='content'>FedEx Ground $62.32</span>

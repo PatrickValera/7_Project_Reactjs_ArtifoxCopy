@@ -1,7 +1,7 @@
 .sidebar {
 	flex: 1 1 40%;
 	background-color: #fafafa;
-	padding: 50px 50px;
+	padding: 50px 3rem;
 	.sidebar-content {
 		max-width: 750px;
 		.cart-item {
@@ -86,4 +86,7 @@
 			}
 		}
 	}
+	@media screen and (max-width: $mobile) {
+		padding: 30px 1rem;
+}
 }

@@ -8,7 +8,7 @@ const Carousel = ({item}) => {
         setCurrent(slide)
     }
     useEffect(() => {
-        ref.current.style.transition='all 0.9s cubic-bezier(.06,.42,.3,.86)'
+        ref.current.style.transition='all 0.9s ease-in-out'
         ref.current.style.transform=`translateX(-${current}00%)`
         let timeout=setTimeout(()=>{setCurrent((x)=>x!==3?x+1:0)}, 5000);
         return()=>clearTimeout(timeout)

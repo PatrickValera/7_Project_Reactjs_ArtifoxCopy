@@ -23,15 +23,15 @@ const Footer = () => {
         
            <div className="footer-links">
                <ul className="link-list">
-                   <li ><Link className="link">FAQ</Link></li>
-                   <li ><Link className="link">Financing</Link></li>
-                   <li ><Link className="link">Press</Link></li>
-                   <li ><Link className="link">Privacy</Link></li>
-                   <li ><Link className="link">Warranty</Link></li>
-                   <li ><Link className="link">Returns</Link></li>
-                   <li ><Link className="link">Terms of Use</Link></li>
-                   <li ><Link className="link">Blog</Link></li>
-                   <li ><Link className="link">COVID-19</Link></li>
+                   <li ><Link to="/" className="link">FAQ</Link></li>
+                   <li ><Link to="/"className="link">Financing</Link></li>
+                   <li ><Link to="/"className="link">Press</Link></li>
+                   <li ><Link to="/" className="link">Privacy</Link></li>
+                   <li ><Link to="/" to="/"className="link">Warranty</Link></li>
+                   <li ><Link to="/"className="link">Returns</Link></li>
+                   <li ><Link to="/"className="link">Terms of Use</Link></li>
+                   <li ><Link to="/"className="link">Blog</Link></li>
+                   <li ><Link to="/"className="link">COVID-19</Link></li>
                </ul>
            </div>
         </footer>

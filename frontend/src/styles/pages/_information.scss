@@ -9,10 +9,10 @@
 		justify-content: right;
 		.form {
 			max-width: 900px;
-			padding: 50px;
 			display: flex;
 			flex-wrap: wrap;
 			align-content: flex-start;
+			padding: 50px;
 			.logo-container {
 				width: 100%;
 				margin-bottom: 20px;
@@ -45,9 +45,16 @@
 				height: 45px;
 				padding: 10px;
 				margin: 10px 0;
+			
 			}
 			.half {
 				flex: 1 1 200px;
+			}
+			.first-name{
+				margin-right: 10px;
+				@media screen and (max-width:$mobile) {
+				margin-right: 0;
+				}
 			}
 			.input-check {
 				display: flex;
@@ -79,7 +86,7 @@
 				background-color: transparent;
 				color: #111;
 			}
-			// Shipping page style
+			// Shipping page style and Payment page
 			.info-container {
 				margin: 30px 0 10px 0;
 				width: 100%;
@@ -96,6 +103,8 @@
 					display: flex;
 					font-size: 0.8rem;
 					align-items: center;
+					flex-direction: row;
+					flex-wrap: wrap;
 					.title {
 						flex: 0 0 80px;
 						color: #666;
@@ -135,6 +144,10 @@
 					}
 				}
 			}
+			@media screen and (max-width: $mobile) {
+				padding: 20px;
+			  }
 		}
 	}
+
 }

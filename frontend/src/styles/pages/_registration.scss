@@ -1,43 +1,44 @@
 .register-page {
-  margin: auto;
-  padding-top: 10vh;
-  max-width: 1200px;
-  min-width: 400px;
-  width: 50%;
-  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
   h1 {
     font-size: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
   }
   .register-form {
     width: 100%;
-    padding: 2rem 0 5rem 0;
     position: relative;
-    .input-container {
-      display: flex;
-      position: relative;
-      flex-wrap: wrap;
-
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    .register-input-container {
+      flex: 1 1 100%;
+      padding: 0 1rem;
       input {
         padding: 15px;
-        flex: 1 1 auto;
+        width: 100%;
         font-size: 1.2rem;
         border-radius: 0;
         border: 1.5px solid #bbb;
-        // background-color: red;
-        margin: 0.5rem;
       }
       input:focus {
         border: 1.5px solid #bbb;
       }
     }
     button {
-      padding: 1rem 8rem;
+      margin-top: 2rem;
+      width: 100%;
+      padding: 1rem 0;
       font-size: 1rem;
       border: none;
       border-radius: 0;
       background-color: #111;
       color: white;
-      margin: 0.5rem 0 0 0.5rem;
       transition: 0.2s linear;
       &:hover {
         background-color: rgb(219, 219, 219);

@@ -7,74 +7,77 @@
 @import "pages/registration", "pages/login", "pages/information";
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
-	list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 .main-container {
-	margin-left: $navigation-width;
-	@media screen and (max-width: $mobile) {
-		margin-left: 0;
-	}
+  margin-left: $navigation-width;
+  @media screen and (max-width: $mobile) {
+    margin-left: 0;
+  }
 }
 .main-store {
-	padding: 2rem;
-	header {
-		padding: 1rem 0 0 0.5rem;
-		h2 {
-			font-size: 1.8rem;
-			font-weight: 600;
-			letter-spacing: 0.05rem;
-			padding: 1rem 0 2rem 0;
-		}
-		span {
-			font-size: 0.9rem;
-			color: rgb(75, 75, 75);
-		}
-	}
+  padding: 1.5rem;
+  header {
+    padding: 1rem 0 0 0.5rem;
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      padding: 1rem 0 2rem 0;
+    }
+    span {
+      font-size: 0.9rem;
+      color: rgb(75, 75, 75);
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    padding: 1rem;
+  }
 }
 .breadcrumb {
-	padding-bottom: 2rem;
-	.crumb-text {
-		letter-spacing: 0.02rem;
-		font-size: 0.8rem;
-		color: rgb(0, 0, 0);
-	}
-	.active {
-		color: rgb(168, 168, 168);
-	}
-	.MuiBreadcrumbs-separator {
-		font-size: 0.8rem;
-		margin-left: 0.3rem;
-		margin-right: 0.3rem;
-	}
+  padding-bottom: 2rem;
+  .crumb-text {
+    letter-spacing: 0.02rem;
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0);
+  }
+  .active {
+    color: rgb(168, 168, 168);
+  }
+  .MuiBreadcrumbs-separator {
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
 }
 .checkout-breadcrumb {
-	padding-bottom: 0;
-	.crumb-text {
-		font-size: 0.75rem;
-	}
+  padding-bottom: 0;
+  .crumb-text {
+    font-size: 0.75rem;
+  }
 }
 .clickable {
-	cursor: pointer;
+  cursor: pointer;
 }
 .horizontal-line {
-	position: relative;
-	text-align: center;
-	hr {
-		margin: 20px 0;
-		background: rgb(231, 231, 231);
-		height: 1px;
-		border: none;
-	}
-	span {
-		color: rgb(199, 199, 199);
-		position: absolute;
-		top: -5px;
-		padding: 0 10px;
-		background-color: rgb(255, 255, 255);
-	}
+  position: relative;
+  text-align: center;
+  hr {
+    margin: 20px 0;
+    background: rgb(231, 231, 231);
+    height: 1px;
+    border: none;
+  }
+  span {
+    color: rgb(199, 199, 199);
+    position: absolute;
+    top: -5px;
+    padding: 0 10px;
+    background-color: rgb(255, 255, 255);
+  }
 }
